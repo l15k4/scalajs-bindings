@@ -8,8 +8,8 @@ object Build extends sbt.Build {
   lazy val d3 = project.in(file("d3"))
     .settings(scalaJSSettings: _*)
     .settings(
-      name := "bindings",
-      organization := "com.viagraphs.scalajs",
+      name := "scalajs-bindings",
+      organization := "com.viagraphs",
       version := "0.0.1",
       scalaVersion := "2.11.2",
       libraryDependencies ++= Seq(
