@@ -37,56 +37,56 @@ import scala.scalajs.js.Any
  */
 trait Nest extends js.Object {
 
-  def key[A <: js.Any](keyFunction: js.Function1[A, js.String]): Nest = ???
+  def key[A <: js.Any](keyFunction: js.Function1[A, String]): Nest = js.native
 
-  def key[A <: js.Any](keyFunction: js.Function2[A, js.Number, js.String]): Nest = ???
+  def key[A <: js.Any](keyFunction: js.Function2[A, Double, String]): Nest = js.native
 
-  def sortKeys(comparator: js.Function2[js.Any, js.Any, js.Number]): Nest = ???
+  def sortKeys(comparator: js.Function2[js.Any, js.Any, Double]): Nest = js.native
 
-  def sortValues(comparator: js.Function2[js.Any, js.Any, js.Number]): Nest = ???
+  def sortValues(comparator: js.Function2[js.Any, js.Any, Double]): Nest = js.native
 
-  def rollup[A <: Nest](rollupFunction: js.Function1[A, Any]): Nest = ???
+  def rollup[A <: Nest](rollupFunction: js.Function1[A, Any]): Nest = js.native
 
-  def rollup[A <: Nest](rollupFunction: js.Function2[A, js.Number, Any]): Nest = ???
+  def rollup[A <: Nest](rollupFunction: js.Function2[A, Double, Any]): Nest = js.native
 
-  def map[A <: Any](values: js.Array[A]): js.Dynamic = ???
+  def map[A <: Any](values: js.Array[A]): js.Dynamic = js.native
 
-  def map[A <: js.Any](values: js.Function1[A, js.Number]): js.Dynamic = ???
+  def map[A <: js.Any](values: js.Function1[A, Double]): js.Dynamic = js.native
 
-  def entries(values: js.Array[js.Any]): js.Array[NestKeyValue] = ???
+  def entries(values: js.Array[js.Any]): js.Array[NestKeyValue] = js.native
 }
 
 trait NestKeyValue extends js.Object {
-  var key: js.String = ???
-  var values: js.Any = ???
+  var key: String = js.native
+  var values: js.Any = js.native
 }
 
 trait Map extends js.Object {
-  def has(key: js.String): js.Boolean = ???
+  def has(key: String): Boolean = js.native
 
-  def get(key: js.String): js.Dynamic = ???
+  def get(key: String): js.Dynamic = js.native
 
-  def set[T](key: js.String, value: T): T = ???
+  def set[T](key: String, value: T): T = js.native
 
-  def remove(key: js.String): js.Boolean = ???
+  def remove(key: String): Boolean = js.native
 
-  def keys(): js.Array[js.String] = ???
+  def keys(): js.Array[String] = js.native
 
-  def values(): js.Array[js.Any] = ???
+  def values(): js.Array[js.Any] = js.native
 
-  def entries(): js.Array[js.Any] = ???
+  def entries(): js.Array[js.Any] = js.native
 
-  def forEach(func: js.Function2[js.String, js.Any, Unit]): Unit = ???
+  def forEach(func: js.Function2[String, js.Any, Unit]): Unit = js.native
 }
 
 trait Set extends js.Object {
-  def has(value: js.Any): js.Boolean = ???
+  def has(value: js.Any): Boolean = js.native
 
-  def add(value: js.Any): js.Dynamic = ???
+  def add(value: js.Any): js.Dynamic = js.native
 
-  def remove(value: js.Any): js.Boolean = ???
+  def remove(value: js.Any): Boolean = js.native
 
-  def values(): js.Array[js.Any] = ???
+  def values(): js.Array[js.Any] = js.native
 
-  def forEach(func: js.Function1[js.Any, Unit]): Unit = ???
+  def forEach(func: js.Function1[js.Any, Unit]): Unit = js.native
 }

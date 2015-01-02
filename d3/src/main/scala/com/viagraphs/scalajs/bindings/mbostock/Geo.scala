@@ -3,143 +3,143 @@ package com.viagraphs.scalajs.bindings.mbostock
 import scala.scalajs.js
 
 trait Geo extends js.Object {
-  def path(): Path = ???
-  def circle(): Circle = ???
-  def area(feature: js.Any): js.Number = ???
-  def bounds(feature: js.Any): js.Array[js.Array[js.Number]] = ???
-  def centroid(feature: js.Any): js.Array[js.Number] = ???
-  def distance(a: js.Array[js.Number], b: js.Array[js.Number]): js.Number = ???
-  def interpolate(a: js.Array[js.Number], b: js.Array[js.Number]): js.Function1[js.Number, js.Array[js.Number]] = ???
-  def length(feature: js.Any): js.Number = ???
-  def projection(raw: RawProjection): Projection = ???
-  def projectionMutator(rawFactory: RawProjection): ProjectionMutator = ???
-  def albers(): Projection = ???
-  def albersUsa(): Projection = ???
-  var azimuthalEqualArea: js.Any = ???
-  var azimuthalEquidistant: js.Any = ???
-  var conicConformal: js.Any = ???
-  var conicEquidistant: js.Any = ???
-  var conicEqualArea: js.Any = ???
-  var equirectangular: js.Any = ???
-  var gnomonic: js.Any = ???
-  var mercator: js.Any = ???
-  var orthographic: js.Any = ???
-  var stereographic: js.Any = ???
-  var transverseMercator: js.Any = ???
-  def stream(`object`: GeoJSON, listener: Stream): Unit = ???
-  def graticule(): Graticule = ???
-  def greatArc(): GreatArc = ???
-  def rotation(rotation: js.Array[js.Number]): Rotation = ???
+  def path(): Path = js.native
+  def circle(): Circle = js.native
+  def area(feature: js.Any): Double = js.native
+  def bounds(feature: js.Any): js.Array[js.Array[Double]] = js.native
+  def centroid(feature: js.Any): js.Array[Double] = js.native
+  def distance(a: js.Array[Double], b: js.Array[Double]): Double = js.native
+  def interpolate(a: js.Array[Double], b: js.Array[Double]): js.Function1[Double, js.Array[Double]] = js.native
+  def length(feature: js.Any): Double = js.native
+  def projection(raw: RawProjection): Projection = js.native
+  def projectionMutator(rawFactory: RawProjection): ProjectionMutator = js.native
+  def albers(): Projection = js.native
+  def albersUsa(): Projection = js.native
+  var azimuthalEqualArea: js.Any = js.native
+  var azimuthalEquidistant: js.Any = js.native
+  var conicConformal: js.Any = js.native
+  var conicEquidistant: js.Any = js.native
+  var conicEqualArea: js.Any = js.native
+  var equirectangular: js.Any = js.native
+  var gnomonic: js.Any = js.native
+  var mercator: js.Any = js.native
+  var orthographic: js.Any = js.native
+  var stereographic: js.Any = js.native
+  var transverseMercator: js.Any = js.native
+  def stream(`object`: GeoJSON, listener: Stream): Unit = js.native
+  def graticule(): Graticule = js.native
+  def greatArc(): GreatArc = js.native
+  def rotation(rotation: js.Array[Double]): Rotation = js.native
 }
 
 trait Path extends js.Object {
-  def apply(feature: js.Any, index: js.Any = ???): js.String = ???
-  def projection(): Projection = ???
-  def projection(projection: Projection): Path = ???
-  def context(): js.String = ???
-  def context(context: Context): Path = ???
-  def area(feature: js.Any): js.Dynamic = ???
-  def centroid(feature: js.Any): js.Dynamic = ???
-  def bounds(feature: js.Any): js.Dynamic = ???
-  def pointRadius(): js.Number = ???
-  def pointRadius(radius: js.Number): Path = ???
+  def apply(feature: js.Any, index: js.Any = js.native): String = js.native
+  def projection(): Projection = js.native
+  def projection(projection: Projection): Path = js.native
+  def context(): String = js.native
+  def context(context: Context): Path = js.native
+  def area(feature: js.Any): js.Dynamic = js.native
+  def centroid(feature: js.Any): js.Dynamic = js.native
+  def bounds(feature: js.Any): js.Dynamic = js.native
+  def pointRadius(): Double = js.native
+  def pointRadius(radius: Double): Path = js.native
 }
 
 trait Context extends js.Object {
-  def beginPath(): js.Dynamic = ???
-  def moveTo(x: js.Number, y: js.Number): js.Dynamic = ???
-  def lineTo(x: js.Number, y: js.Number): js.Dynamic = ???
-  def arc(x: js.Number, y: js.Number, radius: js.Number, startAngle: js.Number, endAngle: js.Number): js.Dynamic = ???
-  def closePath(): js.Dynamic = ???
+  def beginPath(): js.Dynamic = js.native
+  def moveTo(x: Double, y: Double): js.Dynamic = js.native
+  def lineTo(x: Double, y: Double): js.Dynamic = js.native
+  def arc(x: Double, y: Double, radius: Double, startAngle: Double, endAngle: Double): js.Dynamic = js.native
+  def closePath(): js.Dynamic = js.native
 }
 
 trait Circle extends js.Object {
-  def apply(args: js.Any*): GeoJSON = ???
-  def origin(): js.Array[js.Number] = ???
-  def origin(origin: js.Array[js.Number]): Circle = ???
-  def angle(): js.Number = ???
-  def angle(angle: js.Number): Circle = ???
-  def precision(): js.Number = ???
-  def precision(precision: js.Number): Circle = ???
+  def apply(args: js.Any*): GeoJSON = js.native
+  def origin(): js.Array[Double] = js.native
+  def origin(origin: js.Array[Double]): Circle = js.native
+  def angle(): Double = js.native
+  def angle(angle: Double): Circle = js.native
+  def precision(): Double = js.native
+  def precision(precision: Double): Circle = js.native
 }
 
 trait Graticule extends js.Object {
-  def apply(): GeoJSON = ???
-  def lines(): js.Array[GeoJSON] = ???
-  def outline(): GeoJSON = ???
-  def extent(): js.Array[js.Array[js.Number]] = ???
-  def extent(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def minorExtent(): js.Array[js.Array[js.Number]] = ???
-  def minorExtent(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def majorExtent(): js.Array[js.Array[js.Number]] = ???
-  def majorExtent(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def step(): js.Array[js.Array[js.Number]] = ???
-  def step(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def minorStep(): js.Array[js.Array[js.Number]] = ???
-  def minorStep(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def majorStep(): js.Array[js.Array[js.Number]] = ???
-  def majorStep(extent: js.Array[js.Array[js.Number]]): Graticule = ???
-  def precision(): js.Number = ???
-  def precision(precision: js.Number): Graticule = ???
+  def apply(): GeoJSON = js.native
+  def lines(): js.Array[GeoJSON] = js.native
+  def outline(): GeoJSON = js.native
+  def extent(): js.Array[js.Array[Double]] = js.native
+  def extent(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def minorExtent(): js.Array[js.Array[Double]] = js.native
+  def minorExtent(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def majorExtent(): js.Array[js.Array[Double]] = js.native
+  def majorExtent(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def step(): js.Array[js.Array[Double]] = js.native
+  def step(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def minorStep(): js.Array[js.Array[Double]] = js.native
+  def minorStep(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def majorStep(): js.Array[js.Array[Double]] = js.native
+  def majorStep(extent: js.Array[js.Array[Double]]): Graticule = js.native
+  def precision(): Double = js.native
+  def precision(precision: Double): Graticule = js.native
 }
 
 trait GreatArc extends js.Object {
-  def apply(): GeoJSON = ???
-  def distance(): js.Number = ???
-  def source(): js.Dynamic = ???
-  def source(source: js.Any): GreatArc = ???
-  def target(): js.Dynamic = ???
-  def target(target: js.Any): GreatArc = ???
-  def precision(): js.Number = ???
-  def precision(precision: js.Number): GreatArc = ???
+  def apply(): GeoJSON = js.native
+  def distance(): Double = js.native
+  def source(): js.Dynamic = js.native
+  def source(source: js.Any): GreatArc = js.native
+  def target(): js.Dynamic = js.native
+  def target(target: js.Any): GreatArc = js.native
+  def precision(): Double = js.native
+  def precision(precision: Double): GreatArc = js.native
 }
 
 trait GeoJSON extends js.Object {
-  var coordinates: js.Array[js.Array[js.Number]] = ???
-  var `type`: js.String = ???
+  var coordinates: js.Array[js.Array[Double]] = js.native
+  var `type`: String = js.native
 }
 
 trait RawProjection extends js.Object {
-  def apply(lambda: js.Number, phi: js.Number): js.Array[js.Number] = ???
-  def invert(x: js.Number, y: js.Number): js.Array[js.Number] = ???
+  def apply(lambda: Double, phi: Double): js.Array[Double] = js.native
+  def invert(x: Double, y: Double): js.Array[Double] = js.native
 }
 
 trait Projection extends js.Object {
-  def apply(coordinates: js.Array[js.Number]): js.Array[js.Number] = ???
-  def invert(point: js.Array[js.Number]): js.Array[js.Number] = ???
-  def rotate(): js.Array[js.Number] = ???
-  def rotate(rotation: js.Array[js.Number]): Projection = ???
-  def center(): js.Array[js.Number] = ???
-  def center(location: js.Array[js.Number]): Projection = ???
-  def parallels(): js.Array[js.Number] = ???
-  def parallels(location: js.Array[js.Number]): Projection = ???
-  def translate(): js.Array[js.Number] = ???
-  def translate(point: js.Array[js.Number]): Projection = ???
-  def scale(): js.Number = ???
-  def scale(scale: js.Number): Projection = ???
-  def clipAngle(): js.Number = ???
-  def clipAngle(angle: js.Number): Projection = ???
-  def clipExtent(): js.Array[js.Array[js.Number]] = ???
-  def clipExtent(extent: js.Array[js.Array[js.Number]]): Projection = ???
-  def precision(): js.Number = ???
-  def precision(precision: js.Number): Projection = ???
-  def stream(listener: Stream = ???): Stream = ???
+  def apply(coordinates: js.Array[Double]): js.Array[Double] = js.native
+  def invert(point: js.Array[Double]): js.Array[Double] = js.native
+  def rotate(): js.Array[Double] = js.native
+  def rotate(rotation: js.Array[Double]): Projection = js.native
+  def center(): js.Array[Double] = js.native
+  def center(location: js.Array[Double]): Projection = js.native
+  def parallels(): js.Array[Double] = js.native
+  def parallels(location: js.Array[Double]): Projection = js.native
+  def translate(): js.Array[Double] = js.native
+  def translate(point: js.Array[Double]): Projection = js.native
+  def scale(): Double = js.native
+  def scale(scale: Double): Projection = js.native
+  def clipAngle(): Double = js.native
+  def clipAngle(angle: Double): Projection = js.native
+  def clipExtent(): js.Array[js.Array[Double]] = js.native
+  def clipExtent(extent: js.Array[js.Array[Double]]): Projection = js.native
+  def precision(): Double = js.native
+  def precision(precision: Double): Projection = js.native
+  def stream(listener: Stream = js.native): Stream = js.native
 }
 
 trait Stream extends js.Object {
-  def point(x: js.Number, y: js.Number, z: js.Number = ???): Unit = ???
-  def lineStart(): Unit = ???
-  def lineEnd(): Unit = ???
-  def polygonStart(): Unit = ???
-  def polygonEnd(): Unit = ???
-  def sphere(): Unit = ???
+  def point(x: Double, y: Double, z: Double = js.native): Unit = js.native
+  def lineStart(): Unit = js.native
+  def lineEnd(): Unit = js.native
+  def polygonStart(): Unit = js.native
+  def polygonEnd(): Unit = js.native
+  def sphere(): Unit = js.native
 }
 
 trait Rotation extends js.Array[js.Any] {
-  def apply(location: js.Array[js.Number]): Rotation = ???
-  def invert(location: js.Array[js.Number]): Rotation = ???
+  def apply(location: js.Array[Double]): Rotation = js.native
+  def invert(location: js.Array[Double]): Rotation = js.native
 }
 
 trait ProjectionMutator extends js.Object {
-  def apply(lambda: js.Number, phi: js.Number): Projection = ???
+  def apply(lambda: Double, phi: Double): Projection = js.native
 }

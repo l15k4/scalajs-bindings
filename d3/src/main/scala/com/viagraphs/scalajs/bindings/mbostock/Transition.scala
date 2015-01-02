@@ -1,6 +1,7 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import org.scalajs.dom.{Element, EventTarget}
+
 import scala.scalajs.js
 
 /**
@@ -23,36 +24,36 @@ trait Transition extends js.Object {
 
    * You may also compute the delay as a function of the data, thereby creating a data-driven animation.
    */
-  def delay(delay: js.Number): Transition = ???
+  def delay(delay: Double): Transition = js.native
 
   /**
    * the function is evaluated for each selected element (in order),
    * being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's delay.
    */
-  def delay(valueFunction: js.Function2[js.Any, js.Number, Any]) = ???
+  def delay(valueFunction: js.Function2[js.Any, Double, Any]) = js.native
 
   /**
    * @return the delay bound to the first non-null element in the transition
    */
-  def delay(): js.Number = ???
+  def delay(): Double = js.native
 
   /**
    * Specifies per-element duration in milliseconds. all elements are given the same duration
    */
-  def duration(duration: js.Number): Transition = ???
+  def duration(duration: Double): Transition = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's duration.
    * The default duration is 250ms.
    */
-  def duration(valueFunction: js.Function2[js.Any, js.Number, Any]) = ???
+  def duration(valueFunction: js.Function2[js.Any, Double, Any]) = js.native
 
   /**
    * @return the duration bound to the first non-null element in the transition.
    */
-  def duration(): js.Number = ???
+  def duration(): Double = js.native
 
   /**
    * Specifies the transition easing function which is used to ease the current parametric timing value t, which is typically in the range [0,1].
@@ -61,17 +62,17 @@ trait Transition extends js.Object {
    * The default easing function is "cubic-in-out". Note that it is not possible to customize the easing function per-element or per-attribute;
    * however, if you use the "linear" easing function, you can apply custom easing inside your interpolator using attrTween or styleTween.
    */
-  def ease(fn: js.Function1[js.Number, js.String]):Transition = ???
+  def ease(fn: js.Function1[Double, String]):Transition = js.native
 
   /**
    * value is assumed to be a string and the arguments are passed to the d3.ease method to generate an easing function.
    */
-  def ease(value: js.String):Transition = ???
+  def ease(value: String):Transition = js.native
 
   /**
    * @return the easing function bound to the first non-null element in the
    */
-  def ease: js.Function = ???
+  def ease: js.Function = js.native
 
   /**
    * Transitions the value of the attribute with the specified name to the specified value.
@@ -86,16 +87,16 @@ trait Transition extends js.Object {
    * if so, the starting value is coerced to an RGB color and interpolateRgb is used.
    * Otherwise, interpolateString is used, which interpolates numbers embedded within strings.
    */
-  def attr(name: js.String, value: js.Any): Transition = ???
+  def attr(name: String, value: js.Any): Transition = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to transition each element's attribute.
    * Null values are not supported because the interpolator would be undefined; if you want to remove the attribute after the transition finishes, listen to the end event.
    */
-  def attr(name: js.String, valueFunction: js.Function2[js.Any, js.Number, Any]): Transition = ???
-  def attr(name: js.String): js.String = ???
-  def attr(attrValueMap: js.Any): Transition = ???
+  def attr(name: String, valueFunction: js.Function2[js.Any, Double, Any]): Transition = js.native
+  def attr(name: String): String = js.native
+  def attr(attrValueMap: js.Any): Transition = js.native
 
   /**
    * Transitions the value of the attribute with the specified name according to the specified tween function.
@@ -120,7 +121,7 @@ trait Transition extends js.Object {
 
    * The attrTween operator is used when you need a custom interpolator, such as one that understands the semantics of SVG path data. One common technique is dataspace interpolation, where interpolateObject is used to interpolate two data values, and the result of this interpolation is then used (say, with a shape) to compute the new attribute value. Use the attr operator for the simpler common case where an interpolator can be automatically derived from the current attribute value to the desired end value.
    */
-  def attrTween(name: js.String, tweenFn: js.Function3[js.Any, js.Number, js.Any, BaseInterpolate]): Transition = ???
+  def attrTween(name: String, tweenFn: js.Function3[js.Any, Double, js.Any, BaseInterpolate]): Transition = js.native
 
   /**
    * Transitions the value of the CSS style property with the specified name to the specified value.
@@ -141,12 +142,12 @@ trait Transition extends js.Object {
    * particularly if the style property was set using a shorthand property (such as the "font" style, which is shorthand for "font-size", "font-face", etc.).
    * Moreover, computed dimensions such as "font-size" and "line-height" are always in pixels, so you should specify the ending value in pixels too if appropriate.
    */
-  def style(name: js.String, value: js.Any, priority: js.String): Transition = ???
+  def style(name: String, value: js.Any, priority: String): Transition = js.native
 
   /**
    * @return style value
    */
-  def style(name: js.String): js.String = ???
+  def style(name: String): String = js.native
 
   /**
    * the function is evaluated for each selected element (in order),
@@ -155,7 +156,7 @@ trait Transition extends js.Object {
    * Null values are not supported because the interpolator would be undefined;
    * if you want to remove the style property after the transition finishes, listen to the end event.
    */
-  def style(name: js.String, valueFunction: js.Function2[js.Any, js.Number, Any], priority: js.String = ???): Transition = ???
+  def style(name: String, valueFunction: js.Function2[js.Any, Double, Any], priority: String = js.native): Transition = js.native
 
   /**
    * Transitions the value of the CSS style property with the specified name according to the specified tween function.
@@ -180,7 +181,7 @@ trait Transition extends js.Object {
 
    * The styleTween operator is used when you need a custom interpolator, such as one that understands the semantics of CSS3 transforms. Use the style operator for the simpler common case where an interpolator can be automatically derived from the current computed style property value to the desired end value.
    */
-  def styleTween(name: js.String, tween: js.Function3[js.Any, js.Number, js.Any, BaseInterpolate], priority: js.String = ???): Transition = ???
+  def styleTween(name: String, tween: js.Function3[js.Any, Double, js.Any, BaseInterpolate], priority: String = js.native): Transition = js.native
 
   /**
    * The text operator is based on the textContent property; setting the text content will replace any existing child elements.
@@ -189,14 +190,14 @@ trait Transition extends js.Object {
    * With value being string, not function, all elements are given the same text content; otherwise,
    * A null value will clear the content.
    */
-  def text(text: js.String): Transition = ???
+  def text(text: String): Transition = js.native
 
   /**
    * the function is evaluated for each selected element (in order),
    * being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's text content. A null value will clear the content.
    */
-  def text(fn: js.Function2[js.Any, js.Number, js.Any]): Transition = ???
+  def text(fn: js.Function2[js.Any, Double, js.Any]): Transition = js.native
 
   /**
    * Registers a custom tween for the specified name.
@@ -220,13 +221,13 @@ trait Transition extends js.Object {
    * (Though note that in the above example, the starting value of the transition is hard-coded to zero,
    * whereas more commonly the starting value of the transition is based on the current state in the DOM.)
    */
-  def tween(name: js.String, factory: InterpolateFactory): Transition = ???
+  def tween(name: String, factory: InterpolateFactory): Transition = js.native
 
   /**
    * Remove the selected elements at the end of a transition.
    * If a newer transition is scheduled on any of the selected elements, these elements will not be removed; however, the "end" event will still be dispatched.
    */
-  def remove(): Transition = ???
+  def remove(): Transition = js.native
 
   /**
    * Invokes the specified function once, passing in the current transition along with any optional arguments.
@@ -251,7 +252,7 @@ trait Transition extends js.Object {
 
    * In many cases, it is possible to call the same function foo on both transitions and selections, due to identical methods on both selections and transitions! The this context of the called function is also the current transition. This is slightly redundant with the first argument, which we might fix in the future.
    */
-  def call(callback: js.Function1[Selection, Unit]): Transition = ???
+  def call(callback: js.Function1[Selection, Unit]): Transition = js.native
 
   /**
    * For each element in the current transition, selects the first descendant element that matches the specified selector string.
@@ -267,8 +268,8 @@ trait Transition extends js.Object {
    * where selection is the current transition's underlying selection.
    * In addition, the returned new transition inherits easing, duration and delay from the current transition.
    */
-  def select(selector: js.String): Transition = ???
-  def select(element: EventTarget): Transition = ???
+  def select(selector: String): Transition = js.native
+  def select(element: EventTarget): Transition = js.native
 
   /**
    * For each element in the current transition, selects descendant elements that match the specified selector string.
@@ -284,8 +285,8 @@ trait Transition extends js.Object {
    * In addition, the returned new transition inherits easing, duration and delay from the current transition.
    * The duration and delay for each subelement is inherited from the duration and delay of the parent element in the current transition.
    */
-  def selectAll(selector: js.String): Transition = ???
-  def selectAll(elements: js.Array[EventTarget]): Transition = ???
+  def selectAll(selector: String): Transition = js.native
+  def selectAll(elements: js.Array[EventTarget]): Transition = js.native
 
   /**
    * Filters the transition, returning a new transition that contains only the elements for which the specified selector is true.
@@ -306,7 +307,7 @@ trait Transition extends js.Object {
 
    * Thus, you can use either select or filter to apply tweens to a subset of elements.
    */
-  def filter(selector: js.String): Transition = ???
+  def filter(selector: String): Transition = js.native
 
   /**
    * If type is specified, adds a listener for transition events, supporting both "start" and "end" events.
@@ -348,40 +349,40 @@ trait Transition extends js.Object {
 
    * By using d3.select(this) within transition.each, you can even inherit staggered delay across a set of selected elements. This technique is used by the Axis component to support automatic transitions.
    */
-  var each: js.Function2[js.String, js.Function2[js.Any, js.Number, Any], Transition] = ???
+  var each: js.Function2[String, js.Function2[js.Any, Double, Any], Transition] = js.native
 
   /**
    * Creates a new transition on the same selected elements that starts when this transition ends.
    * The new transition inherits this transition’s duration and easing.
    * This can be used to define chained transitions without needing to listen for "end" events.
    */
-  var transition: js.Function0[Transition] = ???
+  var transition: js.Function0[Transition] = js.native
 
   /**
    * @return true if the current transition is empty; a transition is empty if it contains no non-null elements.
    */
-  def empty(): js.Function0[Transition] = ???
+  def empty(): js.Function0[Transition] = js.native
 
   /**
    * @return the first non-null element in the current transition. If the transition is empty, returns null.
    */
-  def node(): Element = ???
+  def node(): Element = js.native
 
   /**
    * @return the total number of elements in the current transition.
    */
-  def size(): Transition = ???
+  def size(): Transition = js.native
 
 }
 
 trait InterpolateFactory extends js.Object {
-  def apply(a: js.Any = ???, b: js.Any = ???): BaseInterpolate = ???
+  def apply(a: js.Any = js.native, b: js.Any = js.native): BaseInterpolate = js.native
 }
 
 trait BaseInterpolate extends js.Object {
-  def apply(a: js.Any, b: js.Any = ???): js.Dynamic = ???
+  def apply(a: js.Any, b: js.Any = js.native): js.Dynamic = js.native
 }
 
 trait Interpolate extends js.Object {
-  def apply(t: js.Any): js.Dynamic = ???
+  def apply(t: js.Any): js.Dynamic = js.native
 }

@@ -31,11 +31,11 @@ trait ScaleBase extends js.Object {
    * @return a new linear scale with the default domain [0,1] and the default range [0,1].
    *         Thus, the default linear scale is equivalent to the identity function for numbers; for example linear(0.5) returns 0.5.
    */
-  def linear(): LinearScale = ???
+  def linear(): LinearScale = js.native
   /**
    * @return a new ordinal scale with an empty domain and an empty range. The ordinal scale is invalid (always returning undefined) until an output range is specified.
    */
-  def ordinal(): OrdinalScale = ???
+  def ordinal(): OrdinalScale = js.native
 
   /**
    * @return a new quantize scale with the default domain [0,1] and the default range [0,1].
@@ -43,44 +43,44 @@ trait ScaleBase extends js.Object {
    *
    * var q = d3.scale.quantize().domain([0, 1]).range(['a', 'b', 'c']);
    */
-  def quantize(): QuantizeScale = ???
+  def quantize(): QuantizeScale = js.native
   /**
    * @return a new ordinal scale with a range of ten categorical colors
    */
-  def category10(): OrdinalScale = ???
+  def category10(): OrdinalScale = js.native
   /**
    * @return a new ordinal scale with a range of twenty categorical colors
    */
-  def category20(): OrdinalScale = ???
+  def category20(): OrdinalScale = js.native
   /**
    * @return a new ordinal scale with a range of twenty categorical colors
    */
-  def category20b(): OrdinalScale = ???
+  def category20b(): OrdinalScale = js.native
   /**
    * @return a new ordinal scale with a range of twenty categorical colors
    */
-  def category20c(): OrdinalScale = ???
+  def category20c(): OrdinalScale = js.native
 
   /**
    * @return a new identity scale with the default domain [0, 1] and the default range [0, 1]. An identity scale is always equivalent to the identity function.
    */
-  def identity(): IdentityScale = ???
+  def identity(): IdentityScale = js.native
 
   /**
    * @return a new log scale with the default domain [1,10], the default range [0,1], and the base 10.
    */
-  def log(): LogScale = ???
+  def log(): LogScale = js.native
 
   /**
    * @return a new power scale with the default domain [0,1], the default range [0,1], and the default exponent 1.
    *         Thus, the default power scale is equivalent to the identity function for numbers; for example pow(0.5) returns 0.5.
    */
-  def pow(): PowerScale = ???
+  def pow(): PowerScale = js.native
 
   /**
    * @return a new quantile scale with an empty domain and an empty range. The quantile scale is invalid until both a domain and range are specified.
    */
-  def quantile(): QuantileScale = ???
+  def quantile(): QuantileScale = js.native
 
   /**
    * @return a new power scale with the default domain [0,1], the default range [0,1], and the exponent .5. This method is shorthand for:
@@ -91,7 +91,7 @@ trait ScaleBase extends js.Object {
    * the return value is the corresponding value in the output range.
    * Thus, the returned scale is equivalent to the sqrt function for numbers; for example sqrt(0.25) returns 0.5.
    */
-  def sqrt(): SqrtScale = ???
+  def sqrt(): SqrtScale = js.native
 
   /**
    *
@@ -108,27 +108,27 @@ trait ScaleBase extends js.Object {
    * t.invertExtent('b'); //returns [0, 1]
    * t.invertExtent('c'); //returns [1, undefined]
    */
-  def threshold(): ThresholdScale = ???
+  def threshold(): ThresholdScale = js.native
 }
 
 trait Scale extends js.Object {
 
-  def apply(value: js.Any): js.Dynamic = ???
+  def apply(value: js.Any): js.Dynamic = js.native
 
-  def domain[A <: js.Number](values: js.Array[A]): Scale = ???
+  def domain[A <: Double](values: js.Array[A]): Scale = js.native
 
   /**
    * @return the scale's current input domain.
    */
-  def domain(): js.Array[js.Any] = ???
-  def range(values: js.Array[js.Any]): Scale = ???
+  def domain(): js.Array[js.Any] = js.native
+  def range(values: js.Array[js.Any]): Scale = js.native
 
   /**
    * @return the scale's current output range.
    */
-  def range(): js.Array[js.Any] = ???
-  def invertExtent(y: js.Any): js.Array[js.Any] = ???
-  def copy(): Scale = ???
+  def range(): js.Array[js.Any] = js.native
+  def invertExtent(y: js.Any): js.Array[js.Any] = js.native
+  def copy(): Scale = js.native
 }
 
 
@@ -143,7 +143,7 @@ trait Scale extends js.Object {
  * Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
  */
 trait QuantitiveScale extends Scale {
-  def apply(value: js.Number): js.Number = ???
+  def apply(value: Double): Double = js.native
 
   /**
    * @return the value in the input domain x for the corresponding value in the output range y.
@@ -156,7 +156,7 @@ trait QuantitiveScale extends Scale {
    * Thus, the output range may be colors, strings, or even arbitrary objects.
    * As there is no facility to "uninterpolate" arbitrary types, the invert operator is currently supported only on numeric ranges.
    */
-  def invert(value: js.Number): js.Number = ???
+  def invert(value: Double): Double = js.native
 
   /**
    * If numbers is specified, sets the scale's input domain to the specified array of numbers. The array must contain two or more numbers.
@@ -177,7 +177,7 @@ trait QuantitiveScale extends Scale {
    * Internally, polylinear scales perform a binary search for the output interpolator corresponding to the given domain value.
    * By repeating values in both the domain and range, you can also force a chunk of the input domain to map to a constant in the output range.
    */
-  def domain(values: js.Array[js.Number]): QuantitiveScale = ???
+  def domain(values: js.Array[Double]): QuantitiveScale = js.native
 
   /**
    * If values is specified, sets the scale's output range to the specified array of values.
@@ -185,25 +185,25 @@ trait QuantitiveScale extends Scale {
    * The elements in the given array need not be numbers; any value that is supported by the underlying interpolator will work.
    * However, numeric ranges are required for the invert operator. If values is not specified, returns the scale's current output range.
    */
-  def range[A <: js.Number](values: js.Array[A]): QuantitiveScale = ???
+  def range[A <: Double](values: js.Array[A]): QuantitiveScale = js.native
 
   /**
    * Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to d3.interpolateRound.
    * This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts.
    * It is also possible to round the output values manually after the scale is applied.
    */
-  def rangeRound[A <: js.Number](values: js.Array[A]): js.Function1[js.Array[js.Any], QuantitiveScale] = ???
+  def rangeRound[A <: Double](values: js.Array[A]): js.Function1[js.Array[js.Any], QuantitiveScale] = js.native
 
   /**
    * @return the scale's interpolator factory.
    */
-  def interpolate(): Interpolate = ???
+  def interpolate(): Interpolate = js.native
   /**
    * sets the scale's output interpolator using the specified factory.
    * The interpolator factory defaults to d3.interpolate, and is used to map the normalized domain parameter t in [0,1] to the corresponding value in the output range.
    * The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range.
    */
-  def interpolate(factory: Interpolate): QuantitiveScale = ???
+  def interpolate(factory: Interpolate): QuantitiveScale = js.native
 
   /**
    * If boolean is specified, enables or disables clamping accordingly.
@@ -212,7 +212,7 @@ trait QuantitiveScale extends Scale {
    * If clamping is enabled, the normalized domain parameter t is clamped to the range [0,1], such that the return value of the scale is always within the scale's output range.
    * If boolean is not specified, returns whether or not the scale currently clamps values to within the output range.
    */
-  def clamp(clamp: js.Boolean): QuantitiveScale = ???
+  def clamp(clamp: Boolean): QuantitiveScale = js.native
 
   /**
    * Extends the domain so that it starts and ends on nice round values.
@@ -224,7 +224,7 @@ trait QuantitiveScale extends Scale {
    *
    * The optional tick count argument allows greater control over the step size used to extend the bounds, guaranteeing that the returned ticks will exactly cover the domain.
    */
-  def nice(count: js.Number = ???): QuantitiveScale = ???
+  def nice(count: Double = js.native): QuantitiveScale = js.native
 
   /**
    * @return approximately count representative values from the scale's input domain.
@@ -232,7 +232,7 @@ trait QuantitiveScale extends Scale {
    *         and are guaranteed to be within the extent of the input domain. Ticks are often used to display reference lines, or tick marks, in conjunction with the visualized data.
    *         The specified count is only a hint; the scale may return more or fewer values depending on the input domain.
    */
-  def ticks(count: js.Number): js.Array[Double] = ???
+  def ticks(count: Double): js.Array[Double] = js.native
 
   /**
    * Returns a number format function suitable for displaying a tick value.
@@ -248,12 +248,12 @@ trait QuantitiveScale extends Scale {
    *
    * Note that when using a log scale in conjunction with an axis, you typically want to use axis.ticks rather than axis.tickFormat to take advantage of the log scale’s custom tick format, as in bl.ocks.org/5537697.
    */
-  def tickFormat(count: js.Number): js.Function1[js.Number, js.String] = ???
+  def tickFormat(count: Double): js.Function1[Double, String] = js.native
 
   /**
    * @return an exact copy of this linear scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): QuantitiveScale = ???
+  override def copy(): QuantitiveScale = js.native
 }
 
 /**
@@ -270,7 +270,7 @@ trait LinearScale extends QuantitiveScale {
    * Often, the return value of a scale is immediately used to set an attribute or style, and you don’t have to worry about this;
    * however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
    */
-  override def apply(value: js.Number): js.Number = ???
+  override def apply(value: Double): Double = js.native
 }
 
 /**
@@ -281,8 +281,8 @@ trait IdentityScale extends Scale {
   /**
    * @return the given value x.
    */
-  def apply(value: js.Number): js.Number = ???
-  def invert(value: js.Number): js.Number = ???
+  def apply(value: Double): Double = js.native
+  def invert(value: Double): Double = js.native
 
   /**
    * Returns approximately count representative values from the scale's input domain (or equivalently, output range).
@@ -290,7 +290,7 @@ trait IdentityScale extends Scale {
    * and are guaranteed to be within the extent of the input domain. Ticks are often used to display reference lines, or tick marks, in conjunction with the visualized data.
    * The specified count is only a hint; the scale may return more or fewer values depending on the input domain.
    */
-  def ticks(count: js.Number): js.Array[js.Any] = ???
+  def ticks(count: Double): js.Array[js.Any] = js.native
 
   /**
    * @return a number format function suitable for displaying a tick value.
@@ -299,11 +299,11 @@ trait IdentityScale extends Scale {
 
    * The optional format argument allows a format specifier to be specified. If the format specifier doesn’t have a defined precision, the precision will be set automatically by the scale, returning the appropriate format. This provides a convenient, declarative way of specifying a format whose precision will be automatically set by the scale.
    */
-  def tickFormat(count: js.Number): js.Function1[js.Number, js.String] = ???
+  def tickFormat(count: Double): js.Function1[Double, String] = js.native
 }
 
 trait SqrtScale extends QuantitiveScale {
-  override def apply(value: js.Number): js.Number = ???
+  override def apply(value: Double): Double = js.native
 }
 
 /**
@@ -319,7 +319,7 @@ trait PowerScale extends QuantitiveScale {
    * For example, if the domain values are arbitrary objects, then d3.interpolateObject is automatically applied and the scale reuses the returned object.
    * Often, the return value of a scale is immediately used to set an attribute or style, and you don’t have to worry about this; however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
    */
-  override def apply(value: js.Number): js.Number = ???
+  override def apply(value: Double): Double = js.native
 }
 
 /**
@@ -339,7 +339,7 @@ trait LogScale extends QuantitiveScale {
    * Often, the return value of a scale is immediately used to set an attribute or style, and you don’t have to worry about this;
    * however, if you need to store the scale’s return value, use string coercion or create a copy as appropriate.
    */
-  override def apply(value: js.Number): js.Number = ???
+  override def apply(value: Double): Double = js.native
 }
 
 trait OrdinalScale extends Scale {
@@ -349,7 +349,7 @@ trait OrdinalScale extends Scale {
    * and the given value x is not in the scale’s domain, then x is implicitly added to the domain;
    * subsequent invocations of the scale given the same value x will return the same value y from the range.
    */
-  override def apply(value: js.Any): js.Dynamic = ???
+  override def apply(value: js.Any): js.Dynamic = js.native
 
   /**
    * If values is specified, sets the input domain of the ordinal scale to the specified array of values.
@@ -365,9 +365,9 @@ trait OrdinalScale extends Scale {
    * Although domains may thus be constructed implicitly, it is still a good idea to assign the ordinal scale's domain explicitly to ensure deterministic behavior,
    * as inferring the domain from usage will be dependent on ordering.
    */
-  def domain(values: js.Array[js.Any]): OrdinalScale = ???
+  def domain(values: js.Array[js.Any]): OrdinalScale = js.native
 
-  override def domain(): js.Array[js.Any] = ???
+  override def domain(): js.Array[js.Any] = js.native
 
   /**
    * If values is specified, sets the output range of the ordinal scale to the specified array of values.
@@ -378,8 +378,8 @@ trait OrdinalScale extends Scale {
    * This method is intended for when the set of discrete output values is computed explicitly, such as a set of categorical colors.
    * In other cases, such as determining the layout of an ordinal scatterplot or bar chart, you may find the rangePoints or rangeBands operators more convenient.
    */
-  def range[A <: js.Any](values: js.Array[A]): OrdinalScale = ???
-  override def range(): js.Array[js.Any] = ???
+  def range[A <: js.Any](values: js.Array[A]): OrdinalScale = js.native
+  override def range(): js.Array[js.Any] = js.native
 
   /**
    * Sets the output range from the specified continuous interval.
@@ -389,7 +389,7 @@ trait OrdinalScale extends Scale {
    * The padding is expressed as a multiple of the spacing between points.
    * A reasonable value is 1.0, such that the first and last point will be offset from the minimum and maximum value by half the distance between points.
    */
-  def rangePoints(interval: js.Array[js.Any], padding: js.Number = ???): OrdinalScale = ???
+  def rangePoints(interval: js.Array[js.Any], padding: Double = js.native): OrdinalScale = js.native
 
   /**
    * Sets the output range from the specified continuous interval.
@@ -400,29 +400,29 @@ trait OrdinalScale extends Scale {
    * A value of 0.5 means that the band width will be equal to the padding width.
    * The outerPadding argument is for the entire group of bands; a value of 0 means there will be padding only between rangeBands.
    */
-  def rangeBands(interval: js.Array[js.Any], padding: js.Number = ???, outerPadding: js.Number = ???): OrdinalScale = ???
+  def rangeBands(interval: js.Array[js.Any], padding: Double = js.native, outerPadding: Double = js.native): OrdinalScale = js.native
 
   /**
    * Like rangeBands, except guarantees that the band width and offset are integer values, so as to avoid antialiasing artifacts.
    */
-  def rangeRoundBands(interval: js.Array[js.Any], padding: js.Number = ???, outerPadding: js.Number = ???): OrdinalScale = ???
+  def rangeRoundBands(interval: js.Array[js.Any], padding: Double = js.native, outerPadding: Double = js.native): OrdinalScale = js.native
 
   /**
    * @return the band width. When the scale’s range is configured with rangeBands or rangeRoundBands, the scale returns the lower value for the given input.
    * The upper value can then be computed by offsetting by the band width. If the scale’s range is set using range or rangePoints, the band width is zero.
    */
-  def rangeBand(): js.Number = ???
+  def rangeBand(): Double = js.native
 
   /**
    *
    * @return a two-element array representing the extent of the scale's range, i.e., the smallest and largest values.
    */
-  def rangeExtent(): js.Array[js.Any] = ???
+  def rangeExtent(): js.Array[js.Any] = js.native
 
   /**
    * @return an exact copy of this ordinal scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): OrdinalScale = ???
+  override def copy(): OrdinalScale = js.native
 }
 
 /**
@@ -436,7 +436,7 @@ trait QuantizeScale extends Scale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
    */
-  override def apply(value: js.Any): js.Dynamic = ???
+  override def apply(value: js.Any): js.Dynamic = js.native
 
   /**
    * If numbers is specified, sets the scale's input domain to the specified two-element array of numbers.
@@ -444,8 +444,8 @@ trait QuantizeScale extends Scale {
    * If the elements in the given array are not numbers, they will be coerced to numbers; this coercion happens similarly when the scale is called.
    * Thus, a quantize scale can be used to encode any type that can be converted to numbers. If numbers is not specified, returns the scale's current input domain.
    */
-  def domain(values: js.Array[js.Number]): QuantizeScale = ???
-  override def domain(): js.Array[js.Any] = ???
+  def domain(values: js.Array[Double]): QuantizeScale = js.native
+  override def domain(): js.Array[js.Any] = js.native
 
   /**
    * If values is specified, sets the scale's output range to the specified array of values.
@@ -453,13 +453,13 @@ trait QuantizeScale extends Scale {
    * The elements in the given array need not be numbers; any value or type will work.
    * If values is not specified, returns the scale's current output range.
    */
-  def range[A <: js.Any](values: js.Array[A]): QuantizeScale = ???
-  override def range(): js.Array[js.Any] = ???
+  def range[A <: js.Any](values: js.Array[A]): QuantizeScale = js.native
+  override def range(): js.Array[js.Any] = js.native
 
   /**
    * @return an exact copy of this scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): QuantizeScale = ???
+  override def copy(): QuantizeScale = js.native
 }
 
 /**
@@ -472,7 +472,7 @@ trait ThresholdScale extends Scale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
    */
-  override def apply(value: js.Any): js.Dynamic = ???
+  override def apply(value: js.Any): js.Dynamic = js.native
 
   /**
    * If domain is specified, sets the scale's input domain to the specified array of values.
@@ -483,8 +483,8 @@ trait ThresholdScale extends Scale {
    * If there are fewer than N elements in the domain, the additional values in the range are ignored.
    * If there are more than N elements in the domain, the scale may return undefined for some inputs. If domain is not specified, returns the scale's current input domain.
    */
-  def domain(values: js.Array[js.Number]): ThresholdScale = ???
-  override def domain(): js.Array[js.Any] = ???
+  def domain(values: js.Array[Double]): ThresholdScale = js.native
+  override def domain(): js.Array[js.Any] = js.native
 
   /**
    * If values is specified, sets the scale's output range to the specified array of values.
@@ -493,13 +493,13 @@ trait ThresholdScale extends Scale {
    * If there are more than N + 1 elements in the range, the additional values are ignored. The elements in the given array need not be numbers; any value or type will work.
    * If values is not specified, returns the scale's current output range.
    */
-  def range[A <: js.Any](values: js.Array[A]): ThresholdScale = ???
-  override def range(): js.Array[js.Any] = ???
+  def range[A <: js.Any](values: js.Array[A]): ThresholdScale = js.native
+  override def range(): js.Array[js.Any] = js.native
 
   /**
    * @return an exact copy of this scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): ThresholdScale = ???
+  override def copy(): ThresholdScale = js.native
 }
 
 /**
@@ -514,7 +514,7 @@ trait QuantileScale extends Scale {
   /**
    * @return a value x in the input domain, returns the corresponding value in the output range.
    */
-  override def apply(value: js.Any): js.Dynamic = ???
+  override def apply(value: js.Any): js.Dynamic = js.native
 
   /**
    * If numbers is specified, sets the input domain of the quantile scale to the specified set of discrete numeric values.
@@ -523,8 +523,8 @@ trait QuantileScale extends Scale {
    * A copy of the input array is sorted and stored internally. Thus, a quantile scale can be used to encode any type that can be converted to numbers.
    * If numbers is not specified, returns the scale's current input domain.
    */
-  def domain(values: js.Array[js.Number]): QuantileScale = ???
-  override def domain(): js.Array[js.Any] = ???
+  def domain(values: js.Array[Double]): QuantileScale = js.native
+  override def domain(): js.Array[js.Any] = js.native
 
   /**
    * If values is specified, sets the discrete values in the output range.
@@ -533,20 +533,20 @@ trait QuantileScale extends Scale {
    * For example, to compute quartiles, values must be an array of four elements such as [0, 1, 2, 3].
    * If values is not specified, returns the current output range.
    */
-  def range[A <: js.Any](values: js.Array[A]): QuantileScale = ???
-  override def range(): js.Array[js.Any] = ???
+  def range[A <: js.Any](values: js.Array[A]): QuantileScale = js.native
+  override def range(): js.Array[js.Any] = js.native
 
   /**
    * @return the quantile thresholds. If the output range contains n discrete values, the returned threshold array will contain n - 1 values.
    *         Values less than the first element in the thresholds array, quantiles()[0], are considered in the first quantile; greater values less than the second threshold are in the second quantile, and so on.
    *         Internally, the thresholds array is used with d3.bisect to find the output quantile associated with the given input value.
    */
-  def quantiles(): js.Array[js.Any] = ???
+  def quantiles(): js.Array[js.Any] = js.native
 
   /**
    * @return an exact copy of this scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): QuantileScale = ???
+  override def copy(): QuantileScale = js.native
 }
 
 /**
@@ -561,7 +561,7 @@ trait TimeScale extends Scale {
   /**
    * @return Given a date x in the input domain, returns the corresponding value in the output range.
    */
-  def apply(value: Date): js.Number = ???
+  def apply(value: Date): Double = js.native
 
   /**
    * Returns the date in the input domain x for the corresponding value in the output range y.
@@ -569,7 +569,7 @@ trait TimeScale extends Scale {
    * For a valid value y in the output range, scale(scale.invert(y)) equals y; similarly, for a valid date x in the input domain, scale.invert(scale(x)) equals x.
    * The invert operator is particularly useful for interaction, say to determine the date in the input domain that corresponds to the pixel location under the mouse.
    */
-  def invert(value: js.Number): Date = ???
+  def invert(value: Double): Date = js.native
 
   /**
    * If dates is specified, sets the scale's input domain to the specified array of dates.
@@ -579,8 +579,8 @@ trait TimeScale extends Scale {
    * Although time scales typically have just two dates in their domain, you can specify more than two dates for a polylinear scale.
    * In this case, there must be an equivalent number of values in the output range.
    */
-  def domain(values: js.Array[js.Any]): TimeScale = ???
-  override def domain(): js.Array[js.Any] = ???
+  def domain(values: js.Array[js.Any]): TimeScale = js.native
+  override def domain(): js.Array[js.Any] = js.native
 
   /**
    * If values is specified, sets the scale's output range to the specified array of values.
@@ -588,15 +588,15 @@ trait TimeScale extends Scale {
    * The elements in the given array need not be numbers; any value that is supported by the underlying interpolator will work.
    * However, numeric ranges are required for the invert operator. If values is not specified, returns the scale's current output range.
    */
-  def range[A <: js.Any](values: js.Array[A]): QuantileScale = ???
-  override def range(): js.Array[js.Any] = ???
+  def range[A <: js.Any](values: js.Array[A]): QuantileScale = js.native
+  override def range(): js.Array[js.Any] = js.native
 
   /**
    * Sets the scale's output range to the specified array of values, while also setting the scale's interpolator to d3.interpolateRound.
    * This is a convenience routine for when the values output by the scale should be exact integers, such as to avoid antialiasing artifacts.
    * It is also possible to round the output values manually after the scale is applied.
    */
-  def rangeRound[A <: js.Any](values: js.Array[A]): js.Function1[js.Array[js.Any], TimeScale] = ???
+  def rangeRound[A <: js.Any](values: js.Array[A]): js.Function1[js.Array[js.Any], TimeScale] = js.native
 
   /**
    * If factory is specified, sets the scale's output interpolator using the specified factory.
@@ -604,8 +604,8 @@ trait TimeScale extends Scale {
    * The interpolator factory will be used to construct interpolators for each adjacent pair of values from the output range.
    * If factory is not specified, returns the scale's interpolator factory.
    */
-  def interpolate(factory: InterpolateFactory): TimeScale = ???
-  def interpolate(): Interpolate = ???
+  def interpolate(factory: InterpolateFactory): TimeScale = js.native
+  def interpolate(): Interpolate = js.native
 
   /**
    * If boolean is specified, enables or disables clamping accordingly.
@@ -614,7 +614,7 @@ trait TimeScale extends Scale {
    * If clamping is enabled, the normalized domain parameter t is clamped to the range [0,1], such that the return value of the scale is always within the scale's output range.
    * If boolean is not specified, returns whether or not the scale currently clamps values to within the output range.
    */
-  def clamp(clamp: js.Boolean): TimeScale = ???
+  def clamp(clamp: Boolean): TimeScale = js.native
 
   /**
    * Extends the domain so that it starts and ends on nice round values as determined by the specified time interval and optional step count.
@@ -626,7 +626,7 @@ trait TimeScale extends Scale {
    * For example, for a domain of [2009-07-13T00:02, 2009-07-13T23:48], the nice domain is [2009-07-13, 2009-07-14].
    * If the domain has more than two values, nicing the domain only affects the first and last value.
    */
-  def nice(count: js.Number = ???): TimeScale = ???
+  def nice(count: Double = js.native): TimeScale = js.native
 
   /**
    * Returns representative dates from the scale's input domain.
@@ -656,8 +656,8 @@ trait TimeScale extends Scale {
    * 1-year.
    * This set of time intervals is somewhat arbitrary and additional values may be added in the future.
    */
-  def ticks(count: js.Number): js.Array[js.Any] = ???
-  def ticks(range: Range, count: js.Number): js.Array[js.Any] = ???
+  def ticks(count: Double): js.Array[js.Any] = js.native
+  def ticks(range: Range, count: Double): js.Array[js.Any] = js.native
 
   /**
    * Returns a time format function suitable for displaying a tick value.
@@ -677,11 +677,11 @@ trait TimeScale extends Scale {
    *
    * By using multi-scale time formats, the default tick format provides both local and global context for each time interval. For example, by showing the sequence [11 PM, Mon 07, 01 AM], the tick formatter reveals information about hours, dates, and day simultaneously—rather than just the hours. If you'd prefer single-scale time formatting, you can always use your own d3.time.format. You can also roll your own custom multi-scale time format.
    */
-  def tickFormat(count: js.Number): js.Function1[js.Number, js.String] = ???
+  def tickFormat(count: Double): js.Function1[Double, String] = js.native
 
   /**
    * @return an exact copy of this time scale. Changes to this scale will not affect the returned scale, and vice versa.
    */
-  override def copy(): TimeScale = ???
+  override def copy(): TimeScale = js.native
 }
 

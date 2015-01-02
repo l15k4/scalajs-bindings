@@ -1,12 +1,12 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import org.scalajs.dom._
+
 import scala.scalajs.js
-import scala.scalajs.js._
 
 object d3 extends Selectors with Ajax with Interpolations with Colors {
 
-  var behavior: Behavior = ???
+  var behavior: Behavior = js.native
 
   /**
    * Stores the current event, if any. This global is during an event listener callback registered with the on operator.
@@ -19,31 +19,31 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * If your SVG contains transforms, you might also want to know the position of the event relative to those transforms.
    * Use the d3.mouse operator for the standard mouse pointer, and use d3.touches for multitouch events on iOS.
    */
-  var event: Event = ???
+  var event: Event = js.native
 
   /**
    * D3 provides built-in support for parsing comma-separated values, tab-separated values and arbitrary delimiter-separated values.
    * These tabular formats are popular with spreadsheet programs such as Microsoft Excel.
    * Tabular formats are often more space-efficient than JSON, which can improve loading times for large datasets.
    */
-  var csv: Dsv = ???
+  var csv: Dsv = js.native
 
   /**
    * Tab-separated values are equivalent to comma-separated values, except the tab character is used as a delimiter rather than the comma.
    */
-  var tsv: Dsv = ???
+  var tsv: Dsv = js.native
 
-  var time: Time = ???
+  var time: Time = js.native
 
-  var scale: ScaleBase = ???
+  var scale: ScaleBase = js.native
 
-  var layout: Layout = ???
+  var layout: Layout = js.native
 
-  var svg: Svg = ???
+  var svg: Svg = js.native
 
-  var random: Random = ???
+  var random: Random = js.native
 
-  var version: js.String = ???
+  var version: String = js.native
 
   /**
    * @return the root selection, equivalent to d3.select(document.documentElement).
@@ -58,17 +58,17 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
             : this.property("checked", value);
       }
    */
-  def selection(): Selection = ???
+  def selection(): Selection = js.native
 
-  var ns: js.Any = ???
+  var ns: js.Any = js.native
 
-  var ease: js.Function = ???
+  var ease: js.Function = js.native
 
-  var geo: Geo = ???
+  var geo: Geo = js.native
 
-  var geom: Geom = ???
+  var geom: Geom = js.native
 
-  var timer: js.Any = ???
+  var timer: js.Any = js.native
 
   /**
    * Returns -1 if a is less than b, or 1 if a is greater than b, or 0.
@@ -81,7 +81,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Note that if no comparator function is specified to the built-in sort method, the default order is lexicographic (alphabetical), not natural!
    * This can lead to bugs when sorting an array of numbers.
    */
-  def ascending[T](a: T, b: T): js.Number = ???
+  def ascending[T](a: T, b: T): Double = js.native
 
   /**
    * @return -1 if a is greater than b, or 1 if a is less than b, or 0.
@@ -94,7 +94,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Note that if no comparator function is specified to the built-in sort method, the default order is lexicographic (alphabetical), not natural!
    * This can lead to bugs when sorting an array of numbers.
    */
-  def descending[T](a: T, b: T): js.Number = ???
+  def descending[T](a: T, b: T): Double = js.native
 
   /**
    * @return the minimum value in the given array using natural order.
@@ -102,7 +102,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Unlike the built-in Math.min, this method ignores undefined values; this is useful for computing the domain of a scale while only considering the defined region of the data.
    * In addition, elements are compared using natural order rather than numeric order. For example, the minimum of ["20", "3"] is "20", while the minimum of [20, 3] is 3.
    */
-  def min[T](arr: js.Array[T]): T = ???
+  def min[T](arr: js.Array[T]): T = js.native
 
   /**
    * @param map accessor function, which is equivalent to calling array.map(accessor) before computing the minimum value
@@ -111,7 +111,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Unlike the built-in Math.min, this method ignores undefined values; this is useful for computing the domain of a scale while only considering the defined region of the data.
    * In addition, elements are compared using natural order rather than numeric order. For example, the minimum of ["20", "3"] is "20", while the minimum of [20, 3] is 3.
    */
-  def min[T, U](arr: js.Array[T], map: js.Function1[T, U]): U = ???
+  def min[T, U](arr: js.Array[T], map: js.Function1[T, U]): U = js.native
 
   /**
    * @return the maximum value in the given array using natural order.
@@ -119,7 +119,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Unlike the built-in Math.max, this method ignores undefined values; this is useful for computing the domain of a scale while only considering the defined region of the data.
    * In addition, elements are compared using natural order rather than numeric order. For example, the maximum of ["20", "3"] is "3", while the maximum of [20, 3] is 20.
    */
-  def max[T](arr: js.Array[T]): T = ???
+  def max[T](arr: js.Array[T]): T = js.native
 
   /**
    * @param map function which is equivalent to calling array.map(accessor) before computing the maximum value
@@ -128,19 +128,19 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * Unlike the built-in Math.max, this method ignores undefined values; this is useful for computing the domain of a scale while only considering the defined region of the data.
    * In addition, elements are compared using natural order rather than numeric order. For example, the maximum of ["20", "3"] is "3", while the maximum of [20, 3] is 20.
    */
-  def max[T, U](arr: js.Array[T], map: js.Function1[T, U]): U = ???
+  def max[T, U](arr: js.Array[T], map: js.Function1[T, U]): U = js.native
 
   /**
    * the minimum and maximum value in the given array using natural order. This is equivalent to calling d3.min and d3.max simultaneously.
    */
-  def extent[T](arr: js.Array[T]): js.Array[T] = ???
-  def extent[T, U](arr: js.Array[T], map: js.Function1[T, U]): js.Array[U] = ???
+  def extent[T](arr: js.Array[T]): js.Array[T] = js.native
+  def extent[T, U](arr: js.Array[T], map: js.Function1[T, U]): js.Array[U] = js.native
 
   /**
    * @return the sum of the given array. If the array is empty, returns 0.
    *         This method ignores invalid values such as NaN and undefined; this is useful for computing the sum of data while only considering the well-defined values.
    */
-  def sum(arr: js.Array[js.Number]): js.Number = ???
+  def sum(arr: js.Array[Double]): Double = js.native
 
 
   /**
@@ -148,33 +148,33 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * @return the sum of the given array. If the array is empty, returns 0.
    *         This method ignores invalid values such as NaN and undefined; this is useful for computing the sum of data while only considering the well-defined values.
    */
-  def sum[T](arr: js.Array[T], map: js.Function1[T, js.Number]): js.Number = ???
+  def sum[T](arr: js.Array[T], map: js.Function1[T, Double]): Double = js.native
 
   /**
    * @return the mean of the given array. If the array is empty, returns undefined.
    * This method ignores invalid values such as NaN and undefined; this is useful for computing the mean of data while only considering the well-defined values.
    */
-  def mean(arr: js.Array[js.Number]): js.Number = ???
+  def mean(arr: js.Array[Double]): Double = js.native
 
   /**
    * @param map function which is equivalent to calling array.map(accessor) before computing the mean
    * @return the mean of the given array. If the array is empty, returns undefined.
    * This method ignores invalid values such as NaN and undefined; this is useful for computing the mean of data while only considering the well-defined values.
    */
-  def mean[T](arr: js.Array[T], map: js.Function1[T, js.Number]): js.Number = ???
+  def mean[T](arr: js.Array[T], map: js.Function1[T, Double]): Double = js.native
 
   /**
    * @return the median of the given array using the R-7 algorithm. If the array is empty, returns undefined.
    *         This method ignores invalid values such as NaN and undefined; this is useful for computing the median of data while only considering the well-defined values.
    */
-  def median(arr: js.Array[js.Number]): js.Number = ???
+  def median(arr: js.Array[Double]): Double = js.native
 
   /**
    * @param map function which is equivalent to calling array.map(accessor) before computing the median.
    * @return the median of the given array using the R-7 algorithm. If the array is empty, returns undefined.
    *         This method ignores invalid values such as NaN and undefined; this is useful for computing the median of data while only considering the well-defined values.
    */
-  def median[T](arr: js.Array[T], map: js.Function1[T, js.Number]): js.Number = ???
+  def median[T](arr: js.Array[T], map: js.Function1[T, Double]): Double = js.native
 
   /**
    * @return the p-quantile of the given sorted array of numbers, where p is a number in the range [0,1].
@@ -191,10 +191,10 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
     d3.quantile(a, 0.75); // return 2
     d3.quantile(a, 0.1); // return 0.19999999999999996
    */
-  var quantile: js.Function2[js.Array[js.Number], js.Number, js.Number] = ???
+  var quantile: js.Function2[js.Array[Double], Double, Double] = js.native
 
 
-  def bisect[T](arr: js.Array[T], x: T, low: js.Number = ???, high: js.Number = ???): js.Number = ???
+  def bisect[T](arr: js.Array[T], x: T, low: Double = js.native, high: Double = js.native): Double = js.native
 
   /**
    * Locate the insertion point for x in array to maintain sorted order.
@@ -204,14 +204,14 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * The returned insertion point i partitions the array into two halves
    * so that all v < x for v in array.slice(lo, i) for the left side and all v >= x for v in array.slice(i, hi) for the right side.
    */
-  def bisectLeft[T](arr: js.Array[T], x: T, low: js.Number = ???, high: js.Number = ???): js.Number = ???
+  def bisectLeft[T](arr: js.Array[T], x: T, low: Double = js.native, high: Double = js.native): Double = js.native
 
   /**
    * Similar to bisectLeft, but returns an insertion point which comes after (to the right of) any existing entries of x in array.
    * The returned insertion point i partitions the array into two halves
    * so that all v <= x for v in array.slice(lo, i) for the left side and all v > x for v in array.slice(i, hi) for the right side.
    */
-  def bisectRight[T](arr: js.Array[T], x: T, low: js.Number = ???, high: js.Number = ???): js.Number = ???
+  def bisectRight[T](arr: js.Array[T], x: T, low: Double = js.native, high: Double = js.native): Double = js.native
 
   /**
    * Returns a bisector using the specified accessor or comparator function.
@@ -237,24 +237,24 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * And then applied as bisect(data, new Date(2011, 1, 2)), returning an index.
    * Use a comparator rather than an accessor if you want values to be sorted in an order different than natural order, such as in descending rather than ascending order.
    */
-  def bisector(accessor: js.Function2[js.Any, js.Number, Any]): js.Dynamic = ???
+  def bisector(accessor: js.Function2[js.Any, Double, Any]): js.Dynamic = js.native
 
   /**
    * Randomizes the order of the specified array using the Fisher–Yates shuffle.
    */
-  def shuffle[T](arr: js.Array[T]): js.Array[T] = ???
+  def shuffle[T](arr: js.Array[T]): js.Array[T] = js.native
 
   /**
    * Returns an array containing the property names of the specified object (an associative array).
    * The order of the returned array is undefined.
    */
-  def keys(map: js.Any): js.Array[js.String] = ???
+  def keys(map: js.Any): js.Array[String] = js.native
 
   /**
    * Returns an array containing the property values of the specified object (an associative array).
    * The order of the returned array is undefined.
    */
-  def values(map: js.Array[js.Any]): js.Array[js.Any] = ???
+  def values(map: js.Array[js.Any]): js.Array[js.Any] = js.native
 
   /**
    * Returns an array containing the property keys and values of the specified object (an associative array).
@@ -263,7 +263,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
 
     var entry = d3.entries({ foo: 42 }); // returns [{key: "foo", value: 42}]
    */
-  def entries(map: js.Any): js.Array[js.Any] = ???
+  def entries(map: js.Any): js.Array[js.Any] = js.native
 
   /**
    * Returns a permutation of the specified array using the specified array of indexes.
@@ -282,7 +282,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
         .enter().append('tr').selectAll('td').data(function (row) { return d3.permute(row, cols); })
         .enter().append('td').text(function (d) { return d; });
    */
-  def permute(arr: js.Array[js.Any], indexes: js.Array[js.Any]): js.Array[js.Any] = ???
+  def permute(arr: js.Array[js.Any], indexes: js.Array[js.Any]): js.Array[js.Any] = js.native
 
   /**
    * Returns an array of arrays, where the ith array contains the ith element from each of the argument arrays.
@@ -292,17 +292,17 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
 
     d3.zip([1, 2], [3, 4]); // returns [[1, 3], [2, 4]]
    */
-  def zip(arrs: js.Any*): js.Array[js.Any] = ???
+  def zip(arrs: js.Any*): js.Array[js.Any] = js.native
 
   /**
    *
    */
-  def transform(definition: js.String): js.Dynamic = ???
+  def transform(definition: String): js.Dynamic = js.native
 
   /**
    * Equivalent to d3.zip.apply(null, matrix); uses the zip operator as a two-dimensional matrix transpose.
    */
-  def transpose(matrix: js.Array[js.Any]): js.Array[js.Any] = ???
+  def transpose(matrix: js.Array[js.Any]): js.Array[js.Any] = js.native
 
   /**
    * For each adjacent pair of elements in the specified array, returns a new array of tuples of element i and element i - 1.
@@ -312,7 +312,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
 
    * If the specified array has fewer than two elements, returns the empty array.
    */
-  def pairs(): js.Array[js.Array[js.Any]] = ???
+  def pairs(): js.Array[js.Array[js.Any]] = js.native
 
   /**
    * Merges the specified arrays into a single array.
@@ -320,7 +320,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
 
     d3.merge([ [1], [2, 3] ]); // returns [1, 2, 3]
    */
-  def merge(map: js.Any*): js.Array[js.Any] = ???
+  def merge(map: js.Any*): js.Array[js.Any] = js.native
 
   /**
    * Generates an array containing an arithmetic progression, similar to the Python built-in range. T
@@ -332,41 +332,41 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * if step is negative, the last element is the smallest start + i * step greater than stop.
    * If the returned array would contain an infinite number of values, an error is thrown rather than causing an infinite loop.
    */
-  def range(stop: js.Number, step: js.Number): js.Array[js.Number] = ???
-  def range(start: js.Number, stop: js.Number = ???, step: js.Number = ???): js.Array[js.Number] = ???
+  def range(stop: Double, step: Double): js.Array[Double] = js.native
+  def range(start: Double, stop: Double = js.native, step: Double = js.native): js.Array[Double] = js.native
 
-  def format(specifier: js.String): js.Function1[js.Number, js.String] = ???
+  def format(specifier: String): js.Function1[Double, String] = js.native
 
-  def formatPrefix(value: js.Number, precision: js.Number = ???): MetricPrefix = ???
+  def formatPrefix(value: Double, precision: Double = js.native): MetricPrefix = js.native
 
-  def mouse(container: js.Any): js.Array[js.Number] = ???
+  def mouse(container: js.Any): js.Array[Double] = js.native
 
-  def touches(container: js.Any): js.Array[js.Array[js.Number]] = ???
+  def touches(container: js.Any): js.Array[js.Array[Double]] = js.native
 
-  def functor[R, T](value: js.Function1[R, T]): js.Function1[R, T] = ???
+  def functor[R, T](value: js.Function1[R, T]): js.Function1[R, T] = js.native
 
-  def functor[T](value: T): js.Function1[js.Any, T] = ???
+  def functor[T](value: T): js.Function1[js.Any, T] = js.native
 
-  def nest(): Nest = ???
+  def nest(): Nest = js.native
 
   /**
    * @param object to copy all enumerable properties from the object into this map.
    * @return a new map.
    */
-  def map(`object`: js.Any = ???): Map = ???
+  def map(`object`: js.Any = js.native): Map = js.native
 
   /**
    * @param array to be added the given array of string values to the returned set.
    * @return a new set. If array is specified
    */
-  def set(array: js.Array[js.Any] = ???): Set = ???
+  def set(array: js.Array[js.Any] = js.native): Set = js.native
 
 
-  def dispatch(types: js.String*): Dispatch = ???
+  def dispatch(types: String*): Dispatch = js.native
 
-  def rebind(target: js.Any, source: js.Any, names: js.Any*): js.Dynamic = ???
+  def rebind(target: js.Any, source: js.Any, names: js.Any*): js.Dynamic = js.native
 
-  def requote(str: js.String): js.String = ???
+  def requote(str: String): String = js.native
 
   /**
    * Create an animated transition. This is equivalent to d3.select(document).transition().
@@ -378,9 +378,9 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * This is useful for implementing reusable components that can be called either on selections or on transitions, in the latter case supporting deriving concurrent transitions.
    * An example of this is D3’s axis component.
    */
-  def transition(): Transition = ???
+  def transition(): Transition = js.native
 
-  def round(x: js.Number, n: js.Number): js.Number = ???
+  def round(x: Double, n: Double): Double = js.native
 
 }
 
@@ -398,90 +398,90 @@ trait Selectors extends js.Object {
    * If no elements in the current document match the specified selector, returns the empty selection.
    * If multiple elements match the selector, only the first matching element (in document traversal order) will be selected.
    */
-  def select(selector: js.String): Selection = ???
+  def select(selector: String): Selection = js.native
 
   /**
    * Selects the specified node. This is useful if you already have a reference to a node, such as d3.select(this) within an event listener, or a global such as document.body.
    */
-  def select(element: EventTarget): Selection = ???
+  def select(element: EventTarget): Selection = js.native
 
   /**
    * Selects all elements that match the specified selector. The elements will be selected in document traversal order (top-to-bottom).
    * If no elements in the current document match the specified selector, returns the empty selection.
    */
-  def selectAll(selector: js.String): Selection = ???
+  def selectAll(selector: String): Selection = js.native
 
   /**
    * Selects the specified array of elements.
    * This is useful if you already have a reference to nodes, such as d3.selectAll(this.childNodes) within an event listener, or a global such as document.links.
    * The nodes argument doesn't have to be an array, exactly; any pseudo-array that can be coerced into an array (e.g., a NodeList or arguments) will work.
    */
-  def selectAll(elements: js.Array[EventTarget]): Selection = ???
+  def selectAll(elements: js.Array[EventTarget]): Selection = js.native
 }
 
 trait Ajax extends js.Object {
 
-  def xhr(url: js.String, callback: js.Function1[XMLHttpRequest, Unit]): Xhr = ???
+  def xhr(url: String, callback: js.Function1[XMLHttpRequest, Unit]): Xhr = js.native
 
-  def xhr(url: js.String, mime: js.String, callback: js.Function1[XMLHttpRequest, Unit] = ???): Xhr = ???
+  def xhr(url: String, mime: String, callback: js.Function1[XMLHttpRequest, Unit] = js.native): Xhr = js.native
 
-  def text(url: js.String, callback: js.Function1[js.String, Unit]): Xhr = ???
+  def text(url: String, callback: js.Function1[String, Unit]): Xhr = js.native
 
-  def text(url: js.String, mime: js.String, callback: js.Function1[js.String, Unit] = ???): Xhr = ???
+  def text(url: String, mime: String, callback: js.Function1[String, Unit] = js.native): Xhr = js.native
 
-  def json(url: js.String, callback: js.Function2[js.Any, js.Any, Unit]): Xhr = ???
+  def json(url: String, callback: js.Function2[js.Any, js.Any, Unit]): Xhr = js.native
 
-  def xml(url: js.String, callback: js.Function1[Document, Unit]): Xhr = ???
+  def xml(url: String, callback: js.Function1[Document, Unit]): Xhr = js.native
 
-  def xml(url: js.String, mime: js.String, callback: js.Function1[Document, Unit] = ???): Xhr = ???
+  def xml(url: String, mime: String, callback: js.Function1[Document, Unit] = js.native): Xhr = js.native
 
-  def html(url: js.String, callback: js.Function1[DocumentFragment, Unit]): Xhr = ???
+  def html(url: String, callback: js.Function1[DocumentFragment, Unit]): Xhr = js.native
 }
 
 trait Interpolations extends js.Object {
 
-  def interpolate: BaseInterpolate = ???
+  def interpolate: BaseInterpolate = js.native
 
-  def interpolateNumber: BaseInterpolate = ???
+  def interpolateNumber: BaseInterpolate = js.native
 
-  def interpolateRound: BaseInterpolate = ???
+  def interpolateRound: BaseInterpolate = js.native
 
-  def interpolateString: BaseInterpolate = ???
+  def interpolateString: BaseInterpolate = js.native
 
-  def interpolateRgb: BaseInterpolate = ???
+  def interpolateRgb: BaseInterpolate = js.native
 
-  def interpolateHsl: BaseInterpolate = ???
+  def interpolateHsl: BaseInterpolate = js.native
 
-  def interpolateHcl: BaseInterpolate = ???
+  def interpolateHcl: BaseInterpolate = js.native
 
-  def interpolateLab: BaseInterpolate = ???
+  def interpolateLab: BaseInterpolate = js.native
 
-  def interpolateArray: BaseInterpolate = ???
+  def interpolateArray: BaseInterpolate = js.native
 
-  def interpolateObject: BaseInterpolate = ???
+  def interpolateObject: BaseInterpolate = js.native
 
-  def interpolateTransform: BaseInterpolate = ???
+  def interpolateTransform: BaseInterpolate = js.native
 
-  def interpolators: js.Array[InterpolateFactory] = ???
+  def interpolators: js.Array[InterpolateFactory] = js.native
 }
 
 trait Colors extends js.Object {
 
-  def rgb(r: js.Number, g: js.Number, b: js.Number): RGBColor = ???
+  def rgb(r: Double, g: Double, b: Double): RGBColor = js.native
 
-  def rgb(color: js.String): RGBColor = ???
+  def rgb(color: String): RGBColor = js.native
 
-  def hcl(h: js.Number, c: js.Number, l: js.Number): HCLColor = ???
+  def hcl(h: Double, c: Double, l: Double): HCLColor = js.native
 
-  def hcl(color: js.String): HCLColor = ???
+  def hcl(color: String): HCLColor = js.native
 
-  def hsl(h: js.Number, s: js.Number, l: js.Number): HSLColor = ???
+  def hsl(h: Double, s: Double, l: Double): HSLColor = js.native
 
-  def hsl(color: js.String): HSLColor = ???
+  def hsl(color: String): HSLColor = js.native
 
-  def lab(l: js.Number, a: js.Number, b: js.Number): LABColor = ???
+  def lab(l: Double, a: Double, b: Double): LABColor = js.native
 
-  def lab(color: js.String): LABColor = ???
+  def lab(color: String): LABColor = js.native
 }
 
 

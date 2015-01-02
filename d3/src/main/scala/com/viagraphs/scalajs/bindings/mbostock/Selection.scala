@@ -2,16 +2,14 @@ package com.viagraphs.scalajs.bindings.mbostock
 
 import org.scalajs.dom.Element
 
-import scala.Any
 import scala.scalajs.js
-import scala.scalajs.js._
 
 trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
   /**
    * @return the value of the specified attribute for the first non-null element in the selection. This is generally useful only if you know that the selection contains exactly one element.
    */
-  def attr(name: js.String): js.String = ???
+  def attr(name: String): String = js.native
 
   /**
    * sets the attribute with the specified name to the specified value on all selected elements.
@@ -22,23 +20,23 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
    * name can also be an Object of name and value attributes.
    */
-  def attr(name: js.String, value: js.Any): Selection = ???
+  def attr(name: String, value: js.Any): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's attribute. A null value will remove the specified attribute.
    */
-  def attr[A <: Any](name: js.String, valueFunction: js.Function2[A, js.Number, Any]): Selection = ???
+  def attr[A <: Any](name: String, valueFunction: js.Function2[A, Double, Any]): Selection = js.native
 
   /**
    * If you want to set several attributes at once, use an object literal
    */
-  def attr(attrValueMap: Object): Selection = ???
+  def attr(attrValueMap: Object): Selection = js.native
 
   /**
    * @return true if and only if the first non-null element in this selection has the specified class. This is generally useful only if you know the selection contains exactly one element.
    */
-  def classed(name: js.String): js.String = ???
+  def classed(name: String): String = js.native
 
   /**
    * This operator is a convenience routine for setting the "class" attribute; it understands that the "class" attribute is a set of tokens separated by spaces.
@@ -50,13 +48,13 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
    * If you want to set several classes at once, use an object literal like so: selection.classed({'foo': true, 'bar': false}), or use a space-separated list of class names like so: selection.classed('foo bar', true).
    */
-  def classed(name: js.String, value: js.Any): Selection = ???
+  def classed(name: String, value: js.Any): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to assign or unassign the specified class on each element.
    */
-  def classed(name: js.String, valueFunction: js.Function2[js.Any, js.Number, Any]): Selection = ???
+  def classed(name: String, valueFunction: js.Function2[js.Any, Double, Any]): Selection = js.native
 
 
   /**
@@ -65,31 +63,31 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    * @note that the computed value may be different than the value that was previously set,
    * particularly if the style property was set using a shorthand property (such as the "font" style, which is shorthand for "font-size", "font-face", etc.).
    */
-  def style(name: js.String): js.String = ???
+  def style(name: String): String = js.native
 
   /**
    * sets the CSS style property with the specified name to the specified value on all selected elements.
    * If value is a constant, then all elements are given the same style value;
    * A null value will remove the style property. An optional priority may also be specified, either as null or the string "important" (without the exclamation point).
    */
-  def style(name: js.String, value: js.Any, priority: js.String): Selection = ???
+  def style(name: String, value: js.Any, priority: String): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's style property. A null value will remove the style property.
    */
-  def style[A <: js.Object](name: js.String, valueFunction: Function2[A, js.Number, js.Dynamic], priority: js.String = ???): Selection = ???
+  def style[A <: js.Object](name: String, valueFunction: Function2[A, Double, js.Dynamic], priority: String = js.native): Selection = js.native
 
   /**
    * If you want to set several style properties at once, use an object literal like so: selection.style({'stroke': 'black', 'stroke-width': 2})
    */
-  def style(styleValueMap: Object): Selection = ???
+  def style(styleValueMap: Object): Selection = js.native
 
 
   /**
    * the value of the specified property for the first non-null element in the selection. This is generally useful only if you know the selection contains exactly one element.
    */
-  def property(name: js.String): Unit = ???
+  def property(name: String): Unit = js.native
 
   /**
    * Some HTML elements have special properties that are not addressable using standard attributes or styles.
@@ -100,24 +98,24 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    * If value is a constant, then all elements are given the same property value;
    * A null value will delete the specified attribute.
    */
-  def property(name: js.String, value: js.Any): Selection = ???
+  def property(name: String, value: js.Any): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's property.A null value will delete the specified attribute.
    */
-  def property(name: js.String, valueFunction: js.Function2[js.Any, js.Number, Any]): Selection = ???
+  def property(name: String, valueFunction: js.Function2[js.Any, Double, Any]): Selection = js.native
 
   /**
    * If you want to set several properties at once, use an object literal like so: selection.property({'foo': 'bar', 'baz': 'qux'}).
    */
-  def property(propertyValueMap: Object): Selection = ???
+  def property(propertyValueMap: Object): Selection = js.native
 
   /**
    * @return the text content for the first non-null element in the selection.
    *         This is generally useful only if you know the selection contains exactly one element.
    */
-  def text(): js.String = ???
+  def text(): String = js.native
 
   /**
    * The text operator is based on the textContent property; setting the text content will replace any existing child elements.
@@ -126,21 +124,21 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    * If value is a constant, then all elements are given the same text content;
    * A null value will clear the content.
    */
-  def text(value: js.String): Selection = ???
+  def text(value: String): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's text content.
    *
    */
-  def text[A <: js.Any](valueFunction: js.Function2[A, js.Number, js.String]): Selection = ???
+  def text[A <: js.Any](valueFunction: js.Function2[A, Double, String]): Selection = js.native
 
 
   /**
    * @return the inner HTML content for the first non-null element in the selection.
    *         This is generally useful only if you know the selection contains exactly one element.
    */
-  def html(): js.String = ???
+  def html(): String = js.native
 
   /**
    * The html operator is based on the innerHTML property; setting the inner HTML content will replace any existing child elements.
@@ -157,14 +155,14 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    *
    * See also the innersvg polyfill, which provides a shim to support the innerHTML property on SVG elements.
    */
-  def html(value: js.Any): Selection = ???
+  def html(value: js.Any): Selection = js.native
 
   /**
    * the function is evaluated for each selected element (in order), being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's inner HTML content.
    * A null value will clear the content.
    */
-  def html(valueFunction: js.Function2[js.Any, js.Number, Any]): Selection = ???
+  def html(valueFunction: js.Function2[js.Any, Double, Any]): Selection = js.native
 
   /**
    * Removes the elements in the current selection from the current document.
@@ -173,7 +171,7 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    *
    * @return the current selection (the same elements that were removed) which are now “off-screen”, detached from the DOM.
    */
-  var remove: js.Function0[Selection] = ???
+  var remove: js.Function0[Selection] = js.native
 
   /**
    * Joins the specified array of data with the current selection.
@@ -223,12 +221,12 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
    * @param values array of data values, such as an array of numbers or objects
    */
-  def data[A](values: js.Array[A]): UpdateSelection = ???
+  def data[A](values: js.Array[A]): UpdateSelection = js.native
 
   /**
    * @param values function that returns an array of values
    */
-  def data[A](values: js.Function2[js.Number, Int, js.Array[A]]): UpdateSelection = ???
+  def data[A](values: js.Function2[Double, Int, js.Array[A]]): UpdateSelection = js.native
 
   /**
    * @return the array of data for the first group in the selection.
@@ -236,7 +234,7 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
              If some of the elements in the selection are null, or if they have no associated data, then the corresponding element in the array will be undefined.
    *
    */
-  def data(): js.Array[js.Any] = ???
+  def data(): js.Array[js.Any] = js.native
 
   /**
    * Gets or sets the bound data for each selected element. Unlike the selection.data method, this method does not compute a join (and thus does not compute enter and exit selections).
@@ -266,18 +264,18 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
    * This can then be used, for example, to sort elements by username.
    */
-  def datum(values: js.Function2[js.Any, js.Number, Any]): UpdateSelection = ???
+  def datum(values: js.Function2[js.Any, Double, Any]): UpdateSelection = js.native
 
   /**
    * all elements are given the same value data
    * A null value will delete the bound data. This operator has no effect on the index.
    */
-  def datum(value: js.Any): Selection = ???
+  def datum(value: js.Any): Selection = js.native
 
   /**
    * @return the bound datum for the first non-null element in the selection. This is generally useful only if you know the selection contains exactly one element.
    */
-  def datum(): js.Dynamic = ???
+  def datum(): js.Dynamic = js.native
 
   /**
    * Filters the selection, returning a new selection that contains only the elements for which the specified selector is true.
@@ -302,14 +300,14 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
    * Thus, you can use either select or filter to apply operators to a subset of elements.
    */
-  def filter(filter: js.Function2[js.Any, js.Number, js.Boolean], thisArg: js.Any = ???): UpdateSelection = ???
+  def filter(filter: js.Function2[js.Any, Double, Boolean], thisArg: js.Any = js.native): UpdateSelection = js.native
 
   /**
    * Invokes the specified function for each element in the current selection, passing in the current datum d and index i, with the this context of the current DOM element.
    * This operator is used internally by nearly every other operator, and can be used to invoke arbitrary code for each selected element.
    * The each operator can be used to process selections recursively, by using d3.select(this) within the callback function.
    */
-  def each(eachFunction: js.Function2[js.Any, js.Number, Any]): Selection = ???
+  def each(eachFunction: js.Function2[js.Any, Double, Any]): Selection = js.native
 
   /**
    * Adds or removes an event listener to each element in the current selection, for the specified type.
@@ -327,18 +325,18 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    * "After initiating capture, all events of the specified type will be dispatched to the registered EventListener before being dispatched to any EventTargets beneath them in the tree.
    * Events which are bubbling upward through the tree will not trigger an EventListener designated to use capture."
    */
-  def on(`type`: js.String, listener: js.Function2[js.Any, js.Number, Any], capture: js.Boolean = ???): Selection = ???
+  def on(`type`: String, listener: js.Function2[js.Any, Double, Any], capture: Boolean = js.native): Selection = js.native
 
   /**
    * @return the currently-assigned listener for the specified type, if any.
    */
-  def on(`type`: js.String): js.Function2[js.Any, js.Number, Any] = ???
+  def on(`type`: String): js.Function2[js.Any, Double, Any] = js.native
 
   /**
    * Starts a transition for the current selection.
    * Transitions behave much like selections, except operators animate smoothly over time rather than applying instantaneously.
    */
-  def transition(): Transition = ???
+  def transition(): Transition = js.native
 
   /**
    * Sorts the elements in the current selection according to the specified comparator function.
@@ -347,13 +345,13 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
    * 
    * @note that the sort is not guaranteed to be stable; however, it is guaranteed to have the same behavior as your browser's built-in sort method on arrays.
    */
-  def sort[T](comparator: js.Function2[T, T, js.Number]): Selection = ???
+  def sort[T](comparator: js.Function2[T, T, Double]): Selection = js.native
 
   /**
    * Re-inserts elements into the document such that the document order matches the selection order.
    * This is equivalent to calling sort() if the data is already sorted, but much faster.
    */
-  var order: js.Function0[Selection] = ???
+  var order: js.Function0[Selection] = js.native
 }
 
 /**
@@ -374,7 +372,7 @@ trait EnterSelection extends js.Object {
 
    * @return a new selection containing the appended elements.
    */
-  def append(sel: String): Selection = ???
+  def append(sel: String): Selection = js.native
 
   /**
    * Inserts a new element with the specified name before the element matching the specified before selector,
@@ -395,20 +393,20 @@ trait EnterSelection extends js.Object {
 
    * @return a new selection containing the inserted elements.
    */
-  def insert(el: String, s: String): Selection = ???
+  def insert(el: String, s: String): Selection = js.native
 
-  // def select(selector: js.String): Selection = ???
+  // def select(selector: String): Selection = js.native
   // select is also supported, but Selection couldn't extend this trait then
 
   /**
    * @return true if the current selection is empty; a selection is empty if it contains no elements or only null elements.
    */
-  def empty: js.Boolean = ???
+  def empty: Boolean = js.native
 
   /**
    * @return the first non-null element in the current selection. If the selection is empty, returns null.
    */
-  def node: Element = ???
+  def node: Element = js.native
 
   /**
    * Invokes the specified function once, passing in the current selection along with any optional arguments.
@@ -451,16 +449,16 @@ trait EnterSelection extends js.Object {
     d3.selectAll("span").call(Foo.prototype.setText.bind(bar));
 
    */
-  def call(callback: js.Function, args: js.Any*): Selection = ???
+  def call(callback: js.Function, args: js.Any*): Selection = js.native
 
-  def call(f: Layout): Selection = ???
+  def call(f: Layout): Selection = js.native
 
-  def call(f: Axis): Selection = ???
+  def call(f: Axis): Selection = js.native
 
   /**
    * @return the total number of elements in the current selection.
    */
-  def size: js.Number = ???
+  def size: Double = js.native
 }
 
 
@@ -501,7 +499,7 @@ trait UpdateSelection extends Selection {
    * Rather than applying operators to both the enter and update selection separately, you can now apply them to the update selection after entering the nodes.
    * In the rare case that you want to run operators only on the updating nodes, you can run them on the update selection before entering new nodes.
    */
-  def enter(): EnterSelection = ???
+  def enter(): EnterSelection = js.native
 
   /**
    * Returns the exiting selection: existing DOM elements in the current selection for which no new data element was found.
@@ -550,5 +548,5 @@ trait UpdateSelection extends Selection {
 
    * If you want the document traversal order to match the selection data order, you can use sort or order.
    */
-  def exit: Selection = ???
+  def exit: Selection = js.native
 }

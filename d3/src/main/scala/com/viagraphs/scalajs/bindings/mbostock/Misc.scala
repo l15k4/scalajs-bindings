@@ -6,35 +6,35 @@ import scala.scalajs.js.annotation.JSBracketAccess
 
 
 trait Event extends js.Object {
-  var dx: js.Number = ???
-  var dy: js.Number = ???
-  var clientX: js.Number = ???
-  var clientY: js.Number = ???
-  var translate: js.Array[js.Number] = ???
-  var scale: js.Number = ???
-  var sourceEvent: Event = ???
-  var x: js.Number = ???
-  var y: js.Number = ???
-  var keyCode: js.Number = ???
-  var altKey: js.Any = ???
-  var `type`: js.String = ???
+  var dx: Double = js.native
+  var dy: Double = js.native
+  var clientX: Double = js.native
+  var clientY: Double = js.native
+  var translate: js.Array[Double] = js.native
+  var scale: Double = js.native
+  var sourceEvent: Event = js.native
+  var x: Double = js.native
+  var y: Double = js.native
+  var keyCode: Double = js.native
+  var altKey: js.Any = js.native
+  var `type`: String = js.native
 }
 
 trait Dispatch extends js.Object {
   @JSBracketAccess
-  def apply(event: js.String): js.Any = ???
+  def apply(event: String): js.Any = js.native
 
   @JSBracketAccess
-  def update(event: js.String, v: js.Any): Unit = ???
+  def update(event: String, v: js.Any): Unit = js.native
 
-  def on(`type`: js.String): js.Dynamic = ???
+  def on(`type`: String): js.Dynamic = js.native
 
-  def on(`type`: js.String, listener: js.Any): js.Dynamic = ???
+  def on(`type`: String, listener: js.Any): js.Dynamic = js.native
 }
 
 trait MetricPrefix extends js.Object {
-  var scale: js.Function1[js.Number, js.Number] = ???
-  var symbol: js.String = ???
+  var scale: js.Function1[Double, Double] = js.native
+  var symbol: String = js.native
 }
 
 trait Dsv extends js.Object {
@@ -53,7 +53,7 @@ trait Dsv extends js.Object {
 
    * See the unemployment choropleth for an example.
    */
-  def apply[A <: js.Object](url: js.String, callback: js.Function2[js.Any, js.Array[A], Unit] = ???): Xhr = ???
+  def apply[A <: js.Object](url: String, callback: js.Function2[js.Any, js.Array[A], Unit] = js.native): Xhr = js.native
 
   /**
    * Parses the specified string, which is the contents of a CSV file, returning an array of objects representing the parsed rows.
@@ -87,7 +87,7 @@ trait Dsv extends js.Object {
 
    * Using + rather than parseInt or parseFloat is typically faster, though more restrictive. For example, "30px" when coerced using + returns NaN, while parseInt and parseFloat return 30.
    */
-  def parse(string: js.String): js.Array[js.Any] = ???
+  def parse(string: String): js.Array[js.Any] = js.native
 
   /**
    * Parses the specified string, which is the contents of a CSV file, returning an array of arrays representing the parsed rows.
@@ -112,7 +112,7 @@ trait Dsv extends js.Object {
    * In effect, the accessor is similar to applying a map and filter operator to the returned rows.
    * The accessor function is used by parse to convert each row to an object with named attributes.
    */
-  def parseRows(string: js.String, accessor: js.Function2[js.Array[js.Any], js.Number, Any]): js.Dynamic = ???
+  def parseRows(string: String, accessor: js.Function2[js.Array[js.Any], Double, Any]): js.Dynamic = js.native
 
   /**
    * Converts the specified array of rows into comma-separated values format, returning a string.
@@ -122,22 +122,22 @@ trait Dsv extends js.Object {
    * Each row should be an object, and all object properties will be converted into fields.
    * For greater control over which properties are converted, convert the rows into arrays containing only the properties that should be converted and use formatRows.
    */
-  def format(rows: js.Array[js.Any]): js.String = ???
+  def format(rows: js.Array[js.Any]): String = js.native
 
   /**
    * Converts the specified array of rows into comma-separated values format, returning a string.
    * This operation is the reverse of parseRows. Each row will be separated by a newline (\n), and each column within each row will be separated by a comma (,).
    * Values that contain either commas, double-quotes (") or newlines will be escaped using double-quotes.
    */
-  def formatRows(rows: js.Array[js.Any]): js.String = ???
+  def formatRows(rows: js.Array[js.Any]): String = js.native
 }
 
 trait Random extends js.Object {
-  def normal(mean: js.Number = ???, deviation: js.Number = ???): js.Function0[js.Number] = ???
+  def normal(mean: Double = js.native, deviation: Double = js.native): js.Function0[Double] = js.native
 
-  def logNormal(mean: js.Number = ???, deviation: js.Number = ???): js.Function0[js.Number] = ???
+  def logNormal(mean: Double = js.native, deviation: Double = js.native): js.Function0[Double] = js.native
 
-  def irwinHall(count: js.Number): js.Function0[js.Number] = ???
+  def irwinHall(count: Double): js.Function0[Double] = js.native
 
-  def bates(mean: Double): js.Function0[js.Number] = ???
+  def bates(mean: Double): js.Function0[Double] = js.native
 }

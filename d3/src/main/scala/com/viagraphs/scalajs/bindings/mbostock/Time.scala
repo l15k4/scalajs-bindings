@@ -4,58 +4,58 @@ import scala.scalajs.js
 import scala.scalajs.js.Date
 
 trait Time extends js.Object {
-  var second: Interval = ???
-  var minute: Interval = ???
-  var hour: Interval = ???
-  var day: Interval = ???
-  var week: Interval = ???
-  var sunday: Interval = ???
-  var monday: Interval = ???
-  var tuesday: Interval = ???
-  var wednesday: Interval = ???
-  var thursday: Interval = ???
-  var friday: Interval = ???
-  var saturday: Interval = ???
-  var month: Interval = ???
-  var year: Interval = ???
-  var seconds: Range = ???
-  var minutes: Range = ???
-  var hours: Range = ???
-  var days: Range = ???
-  var weeks: Range = ???
-  var months: Range = ???
-  var years: Range = ???
-  var sundays: Range = ???
-  var mondays: Range = ???
-  var tuesdays: Range = ???
-  var wednesdays: Range = ???
-  var thursdays: Range = ???
-  var fridays: Range = ???
-  var saturdays: Range = ???
-  var format: js.Any = ???
+  var second: Interval = js.native
+  var minute: Interval = js.native
+  var hour: Interval = js.native
+  var day: Interval = js.native
+  var week: Interval = js.native
+  var sunday: Interval = js.native
+  var monday: Interval = js.native
+  var tuesday: Interval = js.native
+  var wednesday: Interval = js.native
+  var thursday: Interval = js.native
+  var friday: Interval = js.native
+  var saturday: Interval = js.native
+  var month: Interval = js.native
+  var year: Interval = js.native
+  var seconds: Range = js.native
+  var minutes: Range = js.native
+  var hours: Range = js.native
+  var days: Range = js.native
+  var weeks: Range = js.native
+  var months: Range = js.native
+  var years: Range = js.native
+  var sundays: Range = js.native
+  var mondays: Range = js.native
+  var tuesdays: Range = js.native
+  var wednesdays: Range = js.native
+  var thursdays: Range = js.native
+  var fridays: Range = js.native
+  var saturdays: Range = js.native
+  var format: js.Any = js.native
 
   /**
    * @return a new time scale with the default domain and range; the ticks and tick format are configured for local time.
    */
-  def scale: TimeScale = ???
+  def scale: TimeScale = js.native
 }
 
 trait Range extends js.Object {
-  def apply(start: Date, end: Date, step: js.Number = ???): js.Array[Date] = ???
+  def apply(start: Date, end: Date, step: Double = js.native): js.Array[Date] = js.native
 }
 
 trait Interval extends js.Object {
-  def apply(date: Date): Date = ???
-  var floor: js.Function1[Date, Date] = ???
-  var round: js.Function1[Date, Date] = ???
-  var ceil: js.Function1[Date, Date] = ???
-  var range: Range = ???
-  var offset: js.Function2[Date, js.Number, Date] = ???
-  var utc: Interval = ???
+  def apply(date: Date): Date = js.native
+  var floor: js.Function1[Date, Date] = js.native
+  var round: js.Function1[Date, Date] = js.native
+  var ceil: js.Function1[Date, Date] = js.native
+  var range: Range = js.native
+  var offset: js.Function2[Date, Double, Date] = js.native
+  var utc: Interval = js.native
 }
 
 trait TimeFormat extends js.Object {
-  def apply(date: Date): js.String = ???
-  var parse: js.Function1[js.String, Date] = ???
+  def apply(date: Date): String = js.native
+  var parse: js.Function1[String, Date] = js.native
 }
 

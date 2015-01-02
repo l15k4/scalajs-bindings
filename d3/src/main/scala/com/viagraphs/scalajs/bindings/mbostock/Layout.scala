@@ -3,8 +3,8 @@ package com.viagraphs.scalajs.bindings.mbostock
 import scala.scalajs.js
 
 trait Layout extends js.Object {
-  def stack(): StackLayout = ???
-  def pie(): PieLayout = ???
+  def stack(): StackLayout = js.native
+  def pie(): PieLayout = js.native
 
   /**
    * @return a new force-directed layout with the default settings: size 1×1, link strength 1, friction 0.9, distance 20, charge strength -30, gravity strength 0.1, and theta parameter 0.8.
@@ -20,90 +20,90 @@ trait Layout extends js.Object {
       Note that, like D3's other layouts, the force-directed layout doesn't mandate a particular visual representation.
       Most commonly, nodes are mapped to SVG circle elements, and links are mapped to SVG line elements. But you might also display nodes as symbols or images.
    */
-  def force(): ForceLayout = ???
-  def tree(): TreeLayout = ???
-  def bundle(): BundleLayout = ???
-  def chord(): ChordLayout = ???
-  def cluster(): ClusterLayout = ???
-  def hierarchy(): HierarchyLayout = ???
-  def histogram(): HistogramLayout = ???
-  def pack(): PackLayout = ???
-  def partition(): PartitionLayout = ???
-  def treemap(): TreeMapLayout = ???
+  def force(): ForceLayout = js.native
+  def tree(): TreeLayout = js.native
+  def bundle(): BundleLayout = js.native
+  def chord(): ChordLayout = js.native
+  def cluster(): ClusterLayout = js.native
+  def hierarchy(): HierarchyLayout = js.native
+  def histogram(): HistogramLayout = js.native
+  def pack(): PackLayout = js.native
+  def partition(): PartitionLayout = js.native
+  def treemap(): TreeMapLayout = js.native
 }
 
 trait StackLayout extends js.Object {
-  def apply[T](layers: js.Array[T], index: js.Number = ???): js.Array[T] = ???
-  def values(accessor: js.Function1[js.Any, Any] = ???): StackLayout = ???
-  def offset(offset: js.String): StackLayout = ???
+  def apply[T](layers: js.Array[T], index: Double = js.native): js.Array[T] = js.native
+  def values(accessor: js.Function1[js.Any, Any] = js.native): StackLayout = js.native
+  def offset(offset: String): StackLayout = js.native
 }
 
 trait TreeLayout extends js.Object {
-  def sort(): js.Function2[js.Any, js.Any, js.Number] = ???
-  def sort(comparator: js.Function2[js.Any, js.Any, js.Number]): TreeLayout = ???
-  def children(): js.Function1[js.Any, Any] = ???
-  def children(children: js.Function1[js.Any, Any]): TreeLayout = ???
-  def nodes[A <: GraphNode](root: A): TreeLayout = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def seperation(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def seperation(seperation: js.Function2[GraphNode, GraphNode, js.Number]): TreeLayout = ???
-  def size(): js.Array[js.Number] = ???
-  def size(size: js.Array[js.Number]): TreeLayout = ???
+  def sort(): js.Function2[js.Any, js.Any, Double] = js.native
+  def sort(comparator: js.Function2[js.Any, js.Any, Double]): TreeLayout = js.native
+  def children(): js.Function1[js.Any, Any] = js.native
+  def children(children: js.Function1[js.Any, Any]): TreeLayout = js.native
+  def nodes[A <: GraphNode](root: A): TreeLayout = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def seperation(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def seperation(seperation: js.Function2[GraphNode, GraphNode, Double]): TreeLayout = js.native
+  def size(): js.Array[Double] = js.native
+  def size(size: js.Array[Double]): TreeLayout = js.native
 }
 
 trait PieLayout extends js.Object {
-  def apply(values: js.Array[js.Any], index: js.Number = ???): js.Array[ArcDescriptor] = ???
-  def value(): js.Function2[js.Any, js.Number, js.Number] = ???
-  def value(accessor: js.Function2[js.Any, js.Number, js.Number]): PieLayout = ???
-  def sort(): js.Function2[js.Any, js.Any, js.Number] = ???
-  def sort(comparator: js.Function2[js.Any, js.Any, js.Number]): PieLayout = ???
-  def startAngle(): js.Number = ???
-  def startAngle(angle: js.Number): PieLayout = ???
-  def endAngle(): js.Number = ???
-  def endAngle(angle: js.Number): PieLayout = ???
+  def apply(values: js.Array[js.Any], index: Double = js.native): js.Array[ArcDescriptor] = js.native
+  def value(): js.Function2[js.Any, Double, Double] = js.native
+  def value(accessor: js.Function2[js.Any, Double, Double]): PieLayout = js.native
+  def sort(): js.Function2[js.Any, js.Any, Double] = js.native
+  def sort(comparator: js.Function2[js.Any, js.Any, Double]): PieLayout = js.native
+  def startAngle(): Double = js.native
+  def startAngle(angle: Double): PieLayout = js.native
+  def endAngle(): Double = js.native
+  def endAngle(angle: Double): PieLayout = js.native
 }
 
 trait ArcDescriptor extends js.Object {
-  var value: js.Any = ???
-  var data: js.Any = ???
-  var startAngle: js.Number = ???
-  var endAngle: js.Number = ???
-  var index: js.Number = ???
+  var value: js.Any = js.native
+  var data: js.Any = js.native
+  var startAngle: Double = js.native
+  var endAngle: Double = js.native
+  var index: Double = js.native
 }
 
 trait GraphNode extends js.Object {
-  var id: js.Number = ???
-  var index: js.Number = ???
-  var name: js.String = ???
-  var px: js.Number = ???
-  var py: js.Number = ???
-  var size: js.Number = ???
-  var weight: js.Number = ???
-  var x: js.Number = ???
-  var y: js.Number = ???
-  var subindex: js.Number = ???
-  var startAngle: js.Number = ???
-  var endAngle: js.Number = ???
-  var value: js.Number = ???
-  var fixed: js.Boolean = ???
-  var children: js.Array[GraphNode] = ???
-  var _children: js.Array[GraphNode] = ???
-  var parent: GraphNode = ???
-  var depth: js.Number = ???
+  var id: Double = js.native
+  var index: Double = js.native
+  var name: String = js.native
+  var px: Double = js.native
+  var py: Double = js.native
+  var size: Double = js.native
+  var weight: Double = js.native
+  var x: Double = js.native
+  var y: Double = js.native
+  var subindex: Double = js.native
+  var startAngle: Double = js.native
+  var endAngle: Double = js.native
+  var value: Double = js.native
+  var fixed: Boolean = js.native
+  var children: js.Array[GraphNode] = js.native
+  var _children: js.Array[GraphNode] = js.native
+  var parent: GraphNode = js.native
+  var depth: Double = js.native
 }
 
 trait GraphLink extends js.Object {
-  var source: GraphNode = ???
-  var target: GraphNode = ???
+  var source: GraphNode = js.native
+  var target: GraphNode = js.native
 }
 
 trait ForceLayout extends js.Function {
-  def apply(): ForceLayout = ???
+  def apply(): ForceLayout = js.native
 
   /**
    * @return the current size, which defaults to 1×1.
    */
-  def size(): js.Number = ???
+  def size(): Double = js.native
 
   /**
    * sets the available layout size to the specified two-element array of numbers representing x and y.
@@ -113,13 +113,13 @@ trait ForceLayout extends js.Function {
    * When nodes are added to the force layout, if they do not have x and y attributes already set,
    * then these attributes are initialized using a uniform random distribution in the range [0, x] and [0, y], respectively.
    */
-  def size(mysize: js.Array[js.Number]): ForceLayout = ???
-  def size(accessor: js.Function2[js.Any, js.Number, js.Any]): ForceLayout = ???
+  def size(mysize: js.Array[Double]): ForceLayout = js.native
+  def size(accessor: js.Function2[js.Any, Double, js.Any]): ForceLayout = js.native
 
   /**
    * @return the layout's current link distance, which defaults to 20.
    */
-  def linkDistance(): js.Number = ???
+  def linkDistance(): Double = js.native
   /**
    * sets the target distance between linked nodes to the specified value.
    *
@@ -134,13 +134,13 @@ trait ForceLayout extends js.Function {
    * This method of constraints relaxation on top of position Verlet integration is vastly more stable than previous methods using spring forces,
    * and also allows for the flexible implementation of other constraints in the tick event listener, such as hierarchical layering.
    */
-  def linkDistance(number: js.Number): ForceLayout = ???
-  def linkDistance(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def linkDistance(number: Double): ForceLayout = js.native
+  def linkDistance(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the layout's current link strength, which defaults to 1.
    */
-  def linkStrength(): js.Number = ???
+  def linkStrength(): Double = js.native
 
   /**
    * sets the strength (rigidity) of links to the specified value in the range [0,1].
@@ -150,13 +150,13 @@ trait ForceLayout extends js.Function {
    * the function's return value is then used to set each link's strength.
    * The function is evaluated whenever the layout starts.
    */
-  def linkStrength(number: js.Number): ForceLayout = ???
-  def linkStrength(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def linkStrength(number: Double): ForceLayout = js.native
+  def linkStrength(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the current coefficient, which defaults to 0.9.
    */
-  def friction(): js.Number = ???
+  def friction(): Double = js.native
   /**
    * sets the friction coefficient to the specified value.
    *
@@ -165,13 +165,13 @@ trait ForceLayout extends js.Function {
    * Thus, a value of 1 corresponds to a frictionless environment, while a value of 0 freezes all particles in place.
    * Values outside the range [0,1] are not recommended and may have destabilizing effects.
    */
-  def friction(number: js.Number): ForceLayout = ???
-  def friction(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def friction(number: Double): ForceLayout = js.native
+  def friction(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the force layout's cooling parameter, alpha.
    */
-  def alpha(): js.Number = ???
+  def alpha(): Double = js.native
   /**
    * sets alpha to the specified value and returns the force layout.
    *
@@ -179,13 +179,13 @@ trait ForceLayout extends js.Function {
    * If value is nonpositive, and the force layout is running, this method stops the force layout on the next tick and dispatches an "end" event.
    * If value is not specified, this method returns the current alpha value.
    */
-  def alpha(number: js.Number): ForceLayout = ???
-  def alpha(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def alpha(number: Double): ForceLayout = js.native
+  def alpha(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the current charge strength, which defaults to -30.
    */
-  def charge(): js.Number = ???
+  def charge(): Double = js.native
   /**
    * sets the charge strength to the specified value.
    *
@@ -199,13 +199,13 @@ trait ForceLayout extends js.Function {
    * Charge forces are implemented efficiently via the Barnes–Hut algorithm, computing a quadtree for each tick.
    * Setting the charge force to zero disables computation of the quadtree, which can noticeably improve performance if you do not need n-body forces.
    */
-  def charge(number: js.Number): ForceLayout = ???
-  def charge(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def charge(number: Double): ForceLayout = js.native
+  def charge(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the current value, which defaults to 0.8.
    */
-  def theta(): js.Number = ???
+  def theta(): Double = js.native
   /**
    * sets the Barnes–Hut approximation criterion to the specified value.
    *
@@ -218,13 +218,13 @@ trait ForceLayout extends js.Function {
    *    if the ratio of the area of a quadrant in the quadtree to the distance between a node to the quadrant's center of mass is less than theta,
    *    all nodes in the given quadrant are treated as a single, larger node rather than computed individually.
    */
-  def theta(number: js.Number): ForceLayout = ???
-  def theta(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def theta(number: Double): ForceLayout = js.native
+  def theta(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the current gravitational strength, which defaults to 0.1.
    */
-  def gravity(): js.Number = ???
+  def gravity(): Double = js.native
   /**
    * sets the gravitational strength to the specified value.
    * The name of this parameter is perhaps misleading; it does not corresponding to physical gravity (which can be simulated using a positive charge parameter).
@@ -237,13 +237,13 @@ trait ForceLayout extends js.Function {
    * If you disable gravity, it is recommended that you implement some other geometric constraint to prevent nodes from escaping the layout,
    * such as constraining them within the layout's bounds.
    */
-  def gravity(number: js.Number): ForceLayout = ???
-  def gravity(accessor: js.Function2[js.Any, js.Number, js.Number]): ForceLayout = ???
+  def gravity(number: Double): ForceLayout = js.native
+  def gravity(accessor: js.Function2[js.Any, Double, Double]): ForceLayout = js.native
 
   /**
    * @return the current array, which defaults to the empty array.
    */
-  def links(): js.Array[GraphLink] = ???
+  def links(): js.Array[GraphLink] = js.native
   /**
    * sets the layout's associated links to the specified array.
    * Each link has the following attributes:
@@ -255,12 +255,12 @@ trait ForceLayout extends js.Function {
    * these will be replaced by references after the call to start.
    * Link objects may have additional fields that you specify; this data can be used to compute link strength and distance on a per-link basis using an accessor function.
    */
-  def links[A <: GraphLink](arLinks: js.Array[A]): ForceLayout = ???
+  def links[A <: GraphLink](arLinks: js.Array[A]): ForceLayout = js.native
 
   /**
    * @return the current array, which defaults to the empty array.
    */
-  def nodes[A](): js.Array[A] = ???
+  def nodes[A](): js.Array[A] = js.native
   /**
    * sets the layout's associated nodes to the specified array.
    * Each node has the following attributes:
@@ -277,7 +277,7 @@ trait ForceLayout extends js.Function {
    * if they are not set, suitable defaults will be initialized by the layout when start is called.
    * However, be aware that if you are storing other data on your nodes, your data attributes should not conflict with the above properties used by the layout.
    */
-  def nodes[A <: GraphNode](arNodes: js.Array[A]): ForceLayout = ???
+  def nodes[A <: GraphNode](arNodes: js.Array[A]): ForceLayout = js.native
 
   /**
    * Starts the simulation; this method must be called when the layout is first created, after assigning the nodes and links.
@@ -300,7 +300,7 @@ trait ForceLayout extends js.Function {
    * The source and target attributes on incoming links are only replaced with the corresponding entries in nodes if these attributes are numbers;
    * thus, these attributes on existing links are unaffected when the layout is restarted. The link distances and strengths are also computed on start.
    */
-  def start(): ForceLayout = ???
+  def start(): ForceLayout = js.native
 
   /**
    * Equivalent to:
@@ -310,7 +310,7 @@ trait ForceLayout extends js.Function {
    * Sets the cooling parameter alpha to 0.1. This method sets the internal alpha parameter to 0.1, and then restarts the timer.
    * Typically, you don't need to call this method directly; it is called automatically by start. It is also called automatically by drag during a drag gesture.
    */
-  def resume(): ForceLayout = ???
+  def resume(): ForceLayout = js.native
 
   /**
    * Equivalent to:
@@ -321,7 +321,7 @@ trait ForceLayout extends js.Function {
    * This can be used to stop the simulation explicitly, for example, if you want to show animation or allow other interaction.
    * If you do not stop the layout explicitly, it will still stop automatically after the layout's cooling parameter decays below some threshold.
    */
-  def stop(): ForceLayout = ???
+  def stop(): ForceLayout = js.native
 
   /**
    * Runs the force layout simulation one step. This method can be used in conjunction with start and stop to compute a static layout.
@@ -342,7 +342,7 @@ trait ForceLayout extends js.Function {
 
    * If you do not initialize the positions manually, the force layout will initialize them randomly, resulting in somewhat unpredictable behavior.
    */
-  def tick(): ForceLayout = ???
+  def tick(): ForceLayout = js.native
 
   /**
    * Registers the specified listener to receive events of the specified type from the force layout.
@@ -375,7 +375,7 @@ trait ForceLayout extends js.Function {
 
    * The "end" event is dispatched when the simulations internal alpha cooling parameter reaches zero.
    */
-  def on(`type`: js.String, listener: js.Function0[Unit]): ForceLayout = ???
+  def on(`type`: String, listener: js.Function0[Unit]): ForceLayout = js.native
 
   /**
    * Bind a behavior to nodes to allow interactive dragging, either using the mouse or touch.
@@ -397,119 +397,119 @@ trait ForceLayout extends js.Function {
       otherwiseDoAwesomeThing();
     });
    */
-  def drag(): ForceLayout = ???
+  def drag(): ForceLayout = js.native
 }
 
 trait BundleLayout extends js.Object {
-  def apply(links: js.Array[GraphLink]): js.Array[js.Array[GraphNode]] = ???
+  def apply(links: js.Array[GraphLink]): js.Array[js.Array[GraphNode]] = js.native
 }
 
 trait ChordLayout extends js.Object {
-  def matrix(): js.Array[js.Array[js.Number]] = ???
-  def matrix(matrix: js.Array[js.Array[js.Number]]): ChordLayout = ???
-  def padding(): js.Number = ???
-  def padding(padding: js.Number): ChordLayout = ???
-  def sortGroups(): js.Function2[js.Number, js.Number, js.Number] = ???
-  def sortGroups(comparator: js.Function2[js.Number, js.Number, js.Number]): ChordLayout = ???
-  def sortSubgroups(): js.Function2[js.Number, js.Number, js.Number] = ???
-  def sortSubgroups(comparator: js.Function2[js.Number, js.Number, js.Number]): ChordLayout = ???
-  def sortChords(): js.Function2[js.Number, js.Number, js.Number] = ???
-  def sortChords(comparator: js.Function2[js.Number, js.Number, js.Number]): ChordLayout = ???
-  def chords(): js.Array[GraphLink] = ???
-  def groups(): js.Array[ArcDescriptor] = ???
+  def matrix(): js.Array[js.Array[Double]] = js.native
+  def matrix(matrix: js.Array[js.Array[Double]]): ChordLayout = js.native
+  def padding(): Double = js.native
+  def padding(padding: Double): ChordLayout = js.native
+  def sortGroups(): js.Function2[Double, Double, Double] = js.native
+  def sortGroups(comparator: js.Function2[Double, Double, Double]): ChordLayout = js.native
+  def sortSubgroups(): js.Function2[Double, Double, Double] = js.native
+  def sortSubgroups(comparator: js.Function2[Double, Double, Double]): ChordLayout = js.native
+  def sortChords(): js.Function2[Double, Double, Double] = js.native
+  def sortChords(comparator: js.Function2[Double, Double, Double]): ChordLayout = js.native
+  def chords(): js.Array[GraphLink] = js.native
+  def groups(): js.Array[ArcDescriptor] = js.native
 }
 
 trait ClusterLayout extends js.Object {
-  def sort(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def sort(comparator: js.Function2[GraphNode, GraphNode, js.Number]): ClusterLayout = ???
-  def children(): js.Function2[js.Any, js.Number, js.Array[GraphNode]] = ???
-  def children(children: js.Function2[js.Any, js.Number, js.Array[GraphNode]]): ClusterLayout = ???
-  def nodes(root: GraphNode): js.Array[GraphNode] = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def seperation(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def seperation(seperation: js.Function2[GraphNode, GraphNode, js.Number]): ClusterLayout = ???
-  def size(): js.Array[js.Number] = ???
-  def size(size: js.Array[js.Number]): ClusterLayout = ???
-  def value(): js.Function1[GraphNode, js.Number] = ???
-  def value(value: js.Function1[GraphNode, js.Number]): ClusterLayout = ???
+  def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): ClusterLayout = js.native
+  def children(): js.Function2[js.Any, Double, js.Array[GraphNode]] = js.native
+  def children(children: js.Function2[js.Any, Double, js.Array[GraphNode]]): ClusterLayout = js.native
+  def nodes(root: GraphNode): js.Array[GraphNode] = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def seperation(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def seperation(seperation: js.Function2[GraphNode, GraphNode, Double]): ClusterLayout = js.native
+  def size(): js.Array[Double] = js.native
+  def size(size: js.Array[Double]): ClusterLayout = js.native
+  def value(): js.Function1[GraphNode, Double] = js.native
+  def value(value: js.Function1[GraphNode, Double]): ClusterLayout = js.native
 }
 
 trait HierarchyLayout extends js.Object {
-  def sort(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def sort(comparator: js.Function2[GraphNode, GraphNode, js.Number]): HierarchyLayout = ???
-  def children(): js.Function2[js.Any, js.Number, js.Array[GraphNode]] = ???
-  def children(children: js.Function2[js.Any, js.Number, js.Array[GraphNode]]): HierarchyLayout = ???
-  def nodes(root: GraphNode): js.Array[GraphNode] = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def value(): js.Function1[GraphNode, js.Number] = ???
-  def value(value: js.Function1[GraphNode, js.Number]): HierarchyLayout = ???
-  def reValue(root: GraphNode): HierarchyLayout = ???
+  def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): HierarchyLayout = js.native
+  def children(): js.Function2[js.Any, Double, js.Array[GraphNode]] = js.native
+  def children(children: js.Function2[js.Any, Double, js.Array[GraphNode]]): HierarchyLayout = js.native
+  def nodes(root: GraphNode): js.Array[GraphNode] = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def value(): js.Function1[GraphNode, Double] = js.native
+  def value(value: js.Function1[GraphNode, Double]): HierarchyLayout = js.native
+  def reValue(root: GraphNode): HierarchyLayout = js.native
 }
 
 trait Bin extends js.Array[js.Any] {
-  var x: js.Number = ???
-  var dx: js.Number = ???
-  var y: js.Number = ???
+  var x: Double = js.native
+  var dx: Double = js.native
+  var y: Double = js.native
 }
 
 trait HistogramLayout extends js.Object {
-  def apply(values: js.Array[js.Number], index: js.Number = ???): js.Array[Bin] = ???
-  def value(): js.Function1[js.Any, Any] = ???
-  def value(accessor: js.Function1[js.Any, Any]): HistogramLayout = ???
-  def range(): js.Function2[js.Any, js.Number, js.Array[js.Number]] = ???
-  def range(range: js.Function2[js.Any, js.Number, js.Array[js.Number]]): HistogramLayout = ???
-  def bins(): js.Function2[js.Array[js.Any], js.Number, js.Array[js.Number]] = ???
-  def bins(bins: js.Function2[js.Array[js.Any], js.Number, js.Array[js.Number]]): HistogramLayout = ???
-  def bins(threshold: js.Array[Double]): HistogramLayout = ???
-  def frequency(): js.Boolean = ???
-  def frequency(frequency: js.Boolean): HistogramLayout = ???
+  def apply(values: js.Array[Double], index: Double = js.native): js.Array[Bin] = js.native
+  def value(): js.Function1[js.Any, Any] = js.native
+  def value(accessor: js.Function1[js.Any, Any]): HistogramLayout = js.native
+  def range(): js.Function2[js.Any, Double, js.Array[Double]] = js.native
+  def range(range: js.Function2[js.Any, Double, js.Array[Double]]): HistogramLayout = js.native
+  def bins(): js.Function2[js.Array[js.Any], Double, js.Array[Double]] = js.native
+  def bins(bins: js.Function2[js.Array[js.Any], Double, js.Array[Double]]): HistogramLayout = js.native
+  def bins(threshold: js.Array[Double]): HistogramLayout = js.native
+  def frequency(): Boolean = js.native
+  def frequency(frequency: Boolean): HistogramLayout = js.native
 }
 
 trait PackLayout extends js.Object {
-  def sort(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def sort(comparator: js.Function2[GraphNode, GraphNode, js.Number]): PackLayout = ???
-  def children(): js.Function2[js.Any, js.Number, js.Array[GraphNode]] = ???
-  def children(children: js.Function2[js.Any, js.Number, js.Array[GraphNode]]): PackLayout = ???
-  def nodes(root: GraphNode): js.Array[GraphNode] = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def value(): js.Function1[GraphNode, js.Number] = ???
-  def value(value: js.Function1[GraphNode, js.Number]): PackLayout = ???
-  def size(): js.Array[js.Number] = ???
-  def size(size: js.Array[js.Number]): PackLayout = ???
-  def padding(): js.Number = ???
-  def padding(padding: js.Number): PackLayout = ???
+  def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): PackLayout = js.native
+  def children(): js.Function2[js.Any, Double, js.Array[GraphNode]] = js.native
+  def children(children: js.Function2[js.Any, Double, js.Array[GraphNode]]): PackLayout = js.native
+  def nodes(root: GraphNode): js.Array[GraphNode] = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def value(): js.Function1[GraphNode, Double] = js.native
+  def value(value: js.Function1[GraphNode, Double]): PackLayout = js.native
+  def size(): js.Array[Double] = js.native
+  def size(size: js.Array[Double]): PackLayout = js.native
+  def padding(): Double = js.native
+  def padding(padding: Double): PackLayout = js.native
 }
 
 trait PartitionLayout extends js.Object {
-  def sort(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def sort(comparator: js.Function2[GraphNode, GraphNode, js.Number]): PackLayout = ???
-  def children(): js.Function2[js.Any, js.Number, js.Array[GraphNode]] = ???
-  def children(children: js.Function2[js.Any, js.Number, js.Array[GraphNode]]): PackLayout = ???
-  def nodes(root: GraphNode): js.Array[GraphNode] = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def value(): js.Function1[GraphNode, js.Number] = ???
-  def value(value: js.Function1[GraphNode, js.Number]): PackLayout = ???
-  def size(): js.Array[js.Number] = ???
-  def size(size: js.Array[js.Number]): PackLayout = ???
+  def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): PackLayout = js.native
+  def children(): js.Function2[js.Any, Double, js.Array[GraphNode]] = js.native
+  def children(children: js.Function2[js.Any, Double, js.Array[GraphNode]]): PackLayout = js.native
+  def nodes(root: GraphNode): js.Array[GraphNode] = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def value(): js.Function1[GraphNode, Double] = js.native
+  def value(value: js.Function1[GraphNode, Double]): PackLayout = js.native
+  def size(): js.Array[Double] = js.native
+  def size(size: js.Array[Double]): PackLayout = js.native
 }
 
 trait TreeMapLayout extends js.Object {
-  def sort(): js.Function2[GraphNode, GraphNode, js.Number] = ???
-  def sort(comparator: js.Function2[GraphNode, GraphNode, js.Number]): TreeMapLayout = ???
-  def children(): js.Function2[js.Any, js.Number, js.Array[GraphNode]] = ???
-  def children(children: js.Function2[js.Any, js.Number, js.Array[GraphNode]]): TreeMapLayout = ???
-  def nodes(root: GraphNode): js.Array[GraphNode] = ???
-  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = ???
-  def value(): js.Function1[GraphNode, js.Number] = ???
-  def value(value: js.Function1[GraphNode, js.Number]): TreeMapLayout = ???
-  def size(): js.Array[js.Number] = ???
-  def size(size: js.Array[js.Number]): TreeMapLayout = ???
-  def padding(): js.Number = ???
-  def padding(padding: js.Number): TreeMapLayout = ???
-  def round(): js.Boolean = ???
-  def round(round: js.Boolean): TreeMapLayout = ???
-  def sticky(): js.Boolean = ???
-  def sticky(sticky: js.Boolean): TreeMapLayout = ???
-  def mode(): js.String = ???
-  def mode(mode: js.String): TreeMapLayout = ???
+  def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
+  def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): TreeMapLayout = js.native
+  def children(): js.Function2[js.Any, Double, js.Array[GraphNode]] = js.native
+  def children(children: js.Function2[js.Any, Double, js.Array[GraphNode]]): TreeMapLayout = js.native
+  def nodes(root: GraphNode): js.Array[GraphNode] = js.native
+  def links(nodes: js.Array[GraphNode]): js.Array[GraphLink] = js.native
+  def value(): js.Function1[GraphNode, Double] = js.native
+  def value(value: js.Function1[GraphNode, Double]): TreeMapLayout = js.native
+  def size(): js.Array[Double] = js.native
+  def size(size: js.Array[Double]): TreeMapLayout = js.native
+  def padding(): Double = js.native
+  def padding(padding: Double): TreeMapLayout = js.native
+  def round(): Boolean = js.native
+  def round(round: Boolean): TreeMapLayout = js.native
+  def sticky(): Boolean = js.native
+  def sticky(sticky: Boolean): TreeMapLayout = js.native
+  def mode(): String = js.native
+  def mode(mode: String): TreeMapLayout = js.native
 }

@@ -7,29 +7,29 @@ import scala.scalajs.js.Any
 
 trait Xhr extends js.Object {
 
-  def header(name: js.String): js.String = ???
+  def header(name: String): String = js.native
 
-  def header(name: js.String, value: js.String): Xhr = ???
+  def header(name: String, value: String): Xhr = js.native
 
-  def mimeType(): js.String = ???
+  def mimeType(): String = js.native
 
-  def mimeType(`type`: js.String): Xhr = ???
+  def mimeType(`type`: String): Xhr = js.native
 
-  def response(): js.Function1[XMLHttpRequest, Any] = ???
+  def response(): js.Function1[XMLHttpRequest, Any] = js.native
 
-  def response(value: js.Function1[XMLHttpRequest, Any]): Xhr = ???
+  def response(value: js.Function1[XMLHttpRequest, Any]): Xhr = js.native
 
-  def get(callback: js.Function1[XMLHttpRequest, Unit] = ???): Xhr = ???
+  def get(callback: js.Function1[XMLHttpRequest, Unit] = js.native): Xhr = js.native
 
-  def post(callback: js.Function1[XMLHttpRequest, Unit]): Xhr = ???
+  def post(callback: js.Function1[XMLHttpRequest, Unit]): Xhr = js.native
 
-  def post(data: js.Any, callback: js.Function1[XMLHttpRequest, Unit] = ???): Xhr = ???
+  def post(data: js.Any, callback: js.Function1[XMLHttpRequest, Unit] = js.native): Xhr = js.native
 
-  def send(method: js.String, callback: js.Function1[XMLHttpRequest, Unit]): Xhr = ???
+  def send(method: String, callback: js.Function1[XMLHttpRequest, Unit]): Xhr = js.native
 
-  def send(method: js.String, data: js.Any, callback: js.Function1[XMLHttpRequest, Unit] = ???): Xhr = ???
+  def send(method: String, data: js.Any, callback: js.Function1[XMLHttpRequest, Unit] = js.native): Xhr = js.native
 
-  def abort(): Xhr = ???
+  def abort(): Xhr = js.native
 
-  var on: js.Function2[js.String, js.Function2[js.Any, js.Number, Any], Xhr] = ???
+  var on: js.Function2[String, js.Function2[js.Any, Double, Any], Xhr] = js.native
 }
