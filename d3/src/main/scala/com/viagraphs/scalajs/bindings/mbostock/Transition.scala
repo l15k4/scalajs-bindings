@@ -31,7 +31,7 @@ trait Transition extends js.Object {
    * being passed the current datum d and the current index i, with the this context as the current DOM element.
    * The function's return value is then used to set each element's delay.
    */
-  def delay(valueFunction: js.Function2[js.Any, Double, Any]) = js.native
+  def delay(valueFunction: js.Function2[js.Any, Double, Any]): Unit = js.native
 
   /**
    * @return the delay bound to the first non-null element in the transition
@@ -48,7 +48,7 @@ trait Transition extends js.Object {
    * The function's return value is then used to set each element's duration.
    * The default duration is 250ms.
    */
-  def duration(valueFunction: js.Function2[js.Any, Double, Any]) = js.native
+  def duration(valueFunction: js.Function2[js.Any, Double, Any]): Unit = js.native
 
   /**
    * @return the duration bound to the first non-null element in the transition.
