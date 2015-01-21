@@ -13,13 +13,43 @@ object Build extends sbt.Build {
       name := "scalajs-bindings",
       organization := "com.viagraphs",
       version := "0.0.2-SNAPSHOT",
-      scalaVersion := "2.11.4",
+      scalaVersion := "2.11.5",
       libraryDependencies ++= Seq(
         "org.scala-js" %%% "scalajs-dom" % "0.7.1-SNAPSHOT"
       ),
       jsDependencies ++= Seq(
         "org.webjars" % "d3js" % "3.4.11" / "d3.js"
-      )
+      ),
+      publishMavenStyle := true,
+      publishArtifact in Test := false,
+      pomIncludeRepository := { _ => false },
+      publishTo := {
+        val nexus = "https://oss.sonatype.org/"
+        if (isSnapshot.value)
+          Some("snapshots" at nexus + "content/repositories/snapshots")
+        else
+          Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+      },
+      pomExtra :=
+        <url>https://github.com/viagraphs/scalajs-bindings</url>
+          <licenses>
+            <license>
+              <name>The MIT License (MIT)</name>
+              <url>http://opensource.org/licenses/MIT</url>
+              <distribution>repo</distribution>
+            </license>
+          </licenses>
+          <scm>
+            <url>git@github.com:viagraphs/scalajs-bindings.git</url>
+            <connection>scm:git:git@github.com:viagraphs/scalajs-bindings.git</connection>
+          </scm>
+          <developers>
+            <developer>
+              <id>l15k4</id>
+              <name>Jakub Liska</name>
+              <email>liska.jakub@gmail.com</email>
+            </developer>
+          </developers>
     )
 
 }
