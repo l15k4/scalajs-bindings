@@ -290,7 +290,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * If arrays contains only a single array, the returned array contains one-element arrays.
    * With no arguments, the returned array is empty.
 
-    d3.zip([1, 2], [3, 4]); // returns [[1, 3], [2, 4]]
+    d3.zip([1, 2], [3, 4]); // returns [1, 3], [2, 4]
    */
   def zip(arrs: js.Any*): js.Array[js.Any] = js.native
 
@@ -308,7 +308,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
    * For each adjacent pair of elements in the specified array, returns a new array of tuples of element i and element i - 1.
    * For example:
 
-    d3.pairs([1, 2, 3, 4]); // returns [[1, 2], [2, 3], [3, 4]]
+    d3.pairs([1, 2, 3, 4]); // returns [1, 2], [2, 3], [3, 4]
 
    * If the specified array has fewer than two elements, returns the empty array.
    */
@@ -389,7 +389,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
  * D3 provides two top-level methods for selecting elements: select and selectAll.
  * These methods accept selector strings; the former selects only the first matching element,
  * while the latter selects all matching elements in document traversal order.
- * These methods can also accept nodes, which is useful for integration with third-party libraries such as jQuery or developer tools ($0).
+ * These methods can also accept nodes, which is useful for integration with third-party libraries such as jQuery or developer tools.
  */
 trait Selectors extends js.Object {
 
