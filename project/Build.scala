@@ -12,8 +12,8 @@ object Build extends sbt.Build {
     .settings(
       name := "scalajs-bindings",
       organization := "com.viagraphs",
-      version := "0.0.2-SNAPSHOT",
-      scalaVersion := "2.11.5",
+      version := "0.0.3-SNAPSHOT",
+      scalaVersion := "2.11.7",
       scalacOptions ++= Seq(
         "-unchecked", "-deprecation", "-feature", "-Xfatal-warnings",
         "-Xlint", "-Xfuture",
@@ -21,7 +21,7 @@ object Build extends sbt.Build {
         "-Ywarn-nullary-override", "-Ywarn-nullary-unit", "-Yno-adapted-args"
       ),
       libraryDependencies ++= Seq(
-        "org.scala-js" %%% "scalajs-dom" % "0.7.1-SNAPSHOT"
+        "org.scala-js" %%% "scalajs-dom" % "0.8.1"
       ),
       jsDependencies ++= Seq(
         "org.webjars" % "d3js" % "3.4.11" / "d3.js"
