@@ -1,7 +1,9 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 trait Geo extends js.Object {
   def path(): Path = js.native
   def circle(): Circle = js.native
@@ -32,6 +34,7 @@ trait Geo extends js.Object {
   def rotation(rotation: js.Array[Double]): Rotation = js.native
 }
 
+@native
 trait Path extends js.Object {
   def apply(feature: js.Any, index: js.Any = js.native): String = js.native
   def projection(): Projection = js.native
@@ -45,6 +48,7 @@ trait Path extends js.Object {
   def pointRadius(radius: Double): Path = js.native
 }
 
+@native
 trait Context extends js.Object {
   def beginPath(): js.Dynamic = js.native
   def moveTo(x: Double, y: Double): js.Dynamic = js.native
@@ -53,6 +57,7 @@ trait Context extends js.Object {
   def closePath(): js.Dynamic = js.native
 }
 
+@native
 trait Circle extends js.Object {
   def apply(args: js.Any*): GeoJSON = js.native
   def origin(): js.Array[Double] = js.native
@@ -63,6 +68,7 @@ trait Circle extends js.Object {
   def precision(precision: Double): Circle = js.native
 }
 
+@native
 trait Graticule extends js.Object {
   def apply(): GeoJSON = js.native
   def lines(): js.Array[GeoJSON] = js.native
@@ -83,6 +89,7 @@ trait Graticule extends js.Object {
   def precision(precision: Double): Graticule = js.native
 }
 
+@native
 trait GreatArc extends js.Object {
   def apply(): GeoJSON = js.native
   def distance(): Double = js.native
@@ -94,16 +101,19 @@ trait GreatArc extends js.Object {
   def precision(precision: Double): GreatArc = js.native
 }
 
+@native
 trait GeoJSON extends js.Object {
   var coordinates: js.Array[js.Array[Double]] = js.native
   var `type`: String = js.native
 }
 
+@native
 trait RawProjection extends js.Object {
   def apply(lambda: Double, phi: Double): js.Array[Double] = js.native
   def invert(x: Double, y: Double): js.Array[Double] = js.native
 }
 
+@native
 trait Projection extends js.Object {
   def apply(coordinates: js.Array[Double]): js.Array[Double] = js.native
   def invert(point: js.Array[Double]): js.Array[Double] = js.native
@@ -126,6 +136,7 @@ trait Projection extends js.Object {
   def stream(listener: Stream = js.native): Stream = js.native
 }
 
+@native
 trait Stream extends js.Object {
   def point(x: Double, y: Double, z: Double = js.native): Unit = js.native
   def lineStart(): Unit = js.native
@@ -135,11 +146,13 @@ trait Stream extends js.Object {
   def sphere(): Unit = js.native
 }
 
+@native
 trait Rotation extends js.Array[js.Any] {
   def apply(location: js.Array[Double]): Rotation = js.native
   def invert(location: js.Array[Double]): Rotation = js.native
 }
 
+@native
 trait ProjectionMutator extends js.Object {
   def apply(lambda: Double, phi: Double): Projection = js.native
 }

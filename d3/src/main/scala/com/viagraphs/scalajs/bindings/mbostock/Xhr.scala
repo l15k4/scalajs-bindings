@@ -3,8 +3,9 @@ package com.viagraphs.scalajs.bindings.mbostock
 import org.scalajs.dom.XMLHttpRequest
 
 import scala.scalajs.js
-import scala.scalajs.js.Any
+import scala.scalajs.js.{native, Any}
 
+@native
 trait Xhr extends js.Object {
 
   def header(name: String): String = js.native

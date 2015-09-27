@@ -3,7 +3,9 @@ package com.viagraphs.scalajs.bindings.mbostock
 import org.scalajs.dom._
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 object d3 extends Selectors with Ajax with Interpolations with Colors {
 
   var behavior: Behavior = js.native
@@ -391,6 +393,7 @@ object d3 extends Selectors with Ajax with Interpolations with Colors {
  * while the latter selects all matching elements in document traversal order.
  * These methods can also accept nodes, which is useful for integration with third-party libraries such as jQuery or developer tools.
  */
+@native
 trait Selectors extends js.Object {
 
   /**
@@ -419,6 +422,7 @@ trait Selectors extends js.Object {
   def selectAll(elements: js.Array[EventTarget]): Selection = js.native
 }
 
+@native
 trait Ajax extends js.Object {
 
   def xhr(url: String, callback: js.Function1[XMLHttpRequest, Unit]): Xhr = js.native
@@ -438,6 +442,7 @@ trait Ajax extends js.Object {
   def html(url: String, callback: js.Function1[DocumentFragment, Unit]): Xhr = js.native
 }
 
+@native
 trait Interpolations extends js.Object {
 
   def interpolate: BaseInterpolate = js.native
@@ -465,6 +470,7 @@ trait Interpolations extends js.Object {
   def interpolators: js.Array[InterpolateFactory] = js.native
 }
 
+@native
 trait Colors extends js.Object {
 
   def rgb(r: Double, g: Double, b: Double): RGBColor = js.native

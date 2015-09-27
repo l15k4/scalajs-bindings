@@ -3,6 +3,7 @@ package com.viagraphs.scalajs.bindings.mbostock
 import org.scalajs.dom.{Element, EventTarget}
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
 /**
  * Transitions are created using the transition operator on a selection.
@@ -10,6 +11,7 @@ import scala.scalajs.js
  * however, note that a zero-delay transition actually starts after a minimal (~17ms) delay, pending the first timer callback.
  * Transitions have a default duration of 250ms.
  */
+@native
 trait Transition extends js.Object {
 
   /**
@@ -375,14 +377,17 @@ trait Transition extends js.Object {
 
 }
 
+@native
 trait InterpolateFactory extends js.Object {
   def apply(a: js.Any = js.native, b: js.Any = js.native): BaseInterpolate = js.native
 }
 
+@native
 trait BaseInterpolate extends js.Object {
   def apply(a: js.Any, b: js.Any = js.native): js.Dynamic = js.native
 }
 
+@native
 trait Interpolate extends js.Object {
   def apply(t: js.Any): js.Dynamic = js.native
 }

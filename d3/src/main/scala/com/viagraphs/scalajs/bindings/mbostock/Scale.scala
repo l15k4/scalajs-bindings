@@ -1,7 +1,7 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
-import scala.scalajs.js.Date
+import scala.scalajs.js.{native, Date}
 
 /**
  * Scales are functions that map from an input domain to an output range.
@@ -25,7 +25,7 @@ import scala.scalajs.js.Date
  * scale(500);  //Returns 350
  *
  */
-
+@native
 trait ScaleBase extends js.Object {
   /**
    * @return a new linear scale with the default domain [0,1] and the default range [0,1].
@@ -111,6 +111,7 @@ trait ScaleBase extends js.Object {
   def threshold(): ThresholdScale = js.native
 }
 
+@native
 trait Scale extends js.Object {
 
   def apply(value: js.Any): js.Dynamic = js.native
@@ -142,6 +143,7 @@ trait Scale extends js.Object {
  * That is: you can call the scale like any other function, and the scale has additional methods that change its behavior.
  * Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
  */
+@native
 trait QuantitiveScale extends Scale {
   def apply(value: Double): Double = js.native
 
@@ -262,6 +264,7 @@ trait QuantitiveScale extends Scale {
  * The input domain is typically a dimension of the data that you want to visualize, such as the height of students (measured in meters) in a sample population.
  * The output range is typically a dimension of the desired output visualization, such as the height of bars (measured in pixels) in a histogram.
  */
+@native
 trait LinearScale extends QuantitiveScale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -277,6 +280,7 @@ trait LinearScale extends QuantitiveScale {
  * Identity scales are a special case of linear scales where the domain and range are identical; the scale and its invert method are both the identity function.
  * These scales are occasionally useful when working with pixel coordinates, say in conjunction with the axis and brush components.
  */
+@native
 trait IdentityScale extends Scale {
   /**
    * @return the given value x.
@@ -302,6 +306,7 @@ trait IdentityScale extends Scale {
   def tickFormat(count: Double): js.Function1[Double, String] = js.native
 }
 
+@native
 trait SqrtScale extends QuantitiveScale {
   override def apply(value: Double): Double = js.native
 }
@@ -311,6 +316,7 @@ trait SqrtScale extends QuantitiveScale {
  * The mapping to the output range value y can be expressed as a function of the input domain value x: y = mx2k + b, where k is the exponent value.
  * Power scales also support negative values, in which case the input value is multiplied by -1, and the resulting output value is also multiplied by -1.
  */
+@native
 trait PowerScale extends QuantitiveScale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -331,6 +337,7 @@ trait PowerScale extends QuantitiveScale {
  * and the resulting output value is also multiplied by -1).
  * The behavior of the scale is undefined if you pass a negative value to a log scale with a positive domain or vice versa.
  */
+@native
 trait LogScale extends QuantitiveScale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -342,6 +349,7 @@ trait LogScale extends QuantitiveScale {
   override def apply(value: Double): Double = js.native
 }
 
+@native
 trait OrdinalScale extends Scale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -432,6 +440,7 @@ trait OrdinalScale extends Scale {
  * The input domain is typically a dimension of the data that you want to visualize, such as the height of students (measured in meters) in a sample population.
  * The output range is typically a dimension of the desired output visualization, such as the height of bars (measured in pixels) in a histogram.
  */
+@native
 trait QuantizeScale extends Scale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -468,6 +477,7 @@ trait QuantizeScale extends Scale {
  * The input domain is typically a dimension of the data that you want to visualize, such as the height of students (measured in meters) in a sample population.
  * The output range is typically a dimension of the desired output visualization, such as a set of colors (represented as strings).
  */
+@native
 trait ThresholdScale extends Scale {
   /**
    * Given a value x in the input domain, returns the corresponding value in the output range.
@@ -510,6 +520,7 @@ trait ThresholdScale extends Scale {
  * The input domain is typically a dimension of the data that you want to visualize, such as the daily change of the stock market.
  * The output range is typically a dimension of the desired output visualization, such as a diverging color scale.
  */
+@native
 trait QuantileScale extends Scale {
   /**
    * @return a value x in the input domain, returns the corresponding value in the output range.
@@ -557,6 +568,7 @@ trait QuantileScale extends Scale {
  * That is: you can call the scale like any other function, and the scale has additional methods that change its behavior.
  * Like other classes in D3, scales follow the method chaining pattern where setter methods return the scale itself, allowing multiple setters to be invoked in a concise statement.
  */
+@native
 trait TimeScale extends Scale {
   /**
    * @return Given a date x in the input domain, returns the corresponding value in the output range.

@@ -1,12 +1,15 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 trait Behavior extends js.Object {
   def drag(): Drag = js.native
   def zoom(): Zoom = js.native
 }
 
+@native
 trait Zoom extends js.Object {
   def apply(selection: Selection): Unit = js.native
   var on: js.Function2[String, js.Function2[js.Any, Double, Any], Zoom] = js.native
@@ -22,6 +25,7 @@ trait Zoom extends js.Object {
   def y(y: Scale): Zoom = js.native
 }
 
+@native
 trait Drag extends js.Object {
   def apply(): js.Dynamic = js.native
   var on: js.Function2[String, js.Function2[js.Any, Double, Any], Drag] = js.native

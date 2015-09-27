@@ -1,10 +1,10 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
-import scala.scalajs.js.Any
+import scala.scalajs.js.{native, Any}
 import scala.scalajs.js.annotation.JSBracketAccess
 
-
+@native
 trait Event extends js.Object {
   var dx: Double = js.native
   var dy: Double = js.native
@@ -20,6 +20,7 @@ trait Event extends js.Object {
   var `type`: String = js.native
 }
 
+@native
 trait Dispatch extends js.Object {
   @JSBracketAccess
   def apply(event: String): js.Any = js.native
@@ -32,11 +33,13 @@ trait Dispatch extends js.Object {
   def on(`type`: String, listener: js.Any): js.Dynamic = js.native
 }
 
+@native
 trait MetricPrefix extends js.Object {
   var scale: js.Function1[Double, Double] = js.native
   var symbol: String = js.native
 }
 
+@native
 trait Dsv extends js.Object {
 
   /**
@@ -132,6 +135,7 @@ trait Dsv extends js.Object {
   def formatRows(rows: js.Array[js.Any]): String = js.native
 }
 
+@native
 trait Random extends js.Object {
   def normal(mean: Double = js.native, deviation: Double = js.native): js.Function0[Double] = js.native
 

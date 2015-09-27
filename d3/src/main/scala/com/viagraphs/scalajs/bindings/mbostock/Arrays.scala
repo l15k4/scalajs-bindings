@@ -1,7 +1,7 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
-import scala.scalajs.js.Any
+import scala.scalajs.js.{native, Any}
 
 /**
  * Nesting allows elements in an array to be grouped into a hierarchical tree structure;
@@ -35,6 +35,7 @@ import scala.scalajs.js.Any
 
  * The nested form allows easy iteration and generation of hierarchical structures in SVG or HTML.
  */
+@native
 trait Nest extends js.Object {
 
   def key[A <: js.Any](keyFunction: js.Function1[A, String]): Nest = js.native
@@ -56,11 +57,12 @@ trait Nest extends js.Object {
   def entries(values: js.Array[js.Any]): js.Array[NestKeyValue] = js.native
 }
 
+@native
 trait NestKeyValue extends js.Object {
   var key: String = js.native
   var values: js.Any = js.native
 }
-
+@native
 trait Map extends js.Object {
   def has(key: String): Boolean = js.native
 
@@ -79,6 +81,7 @@ trait Map extends js.Object {
   def forEach(func: js.Function2[String, js.Any, Unit]): Unit = js.native
 }
 
+@native
 trait Set extends js.Object {
   def has(value: js.Any): Boolean = js.native
 

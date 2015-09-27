@@ -1,8 +1,9 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
-import scala.scalajs.js.Date
+import scala.scalajs.js.{native,Date}
 
+@native
 trait Time extends js.Object {
   var second: Interval = js.native
   var minute: Interval = js.native
@@ -40,10 +41,12 @@ trait Time extends js.Object {
   def scale: TimeScale = js.native
 }
 
+@native
 trait Range extends js.Object {
   def apply(start: Date, end: Date, step: Double = js.native): js.Array[Date] = js.native
 }
 
+@native
 trait Interval extends js.Object {
   def apply(date: Date): Date = js.native
   var floor: js.Function1[Date, Date] = js.native
@@ -54,6 +57,7 @@ trait Interval extends js.Object {
   var utc: Interval = js.native
 }
 
+@native
 trait TimeFormat extends js.Object {
   def apply(date: Date): String = js.native
   var parse: js.Function1[String, Date] = js.native

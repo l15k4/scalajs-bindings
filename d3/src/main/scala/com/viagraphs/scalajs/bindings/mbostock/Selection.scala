@@ -3,7 +3,9 @@ package com.viagraphs.scalajs.bindings.mbostock
 import org.scalajs.dom.Element
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 
   /**
@@ -357,6 +359,7 @@ trait Selection extends js.Array[js.Any] with Selectors with EnterSelection {
 /**
   * for adding and removing nodes in correspondence with data
   */
+@native
 trait EnterSelection extends js.Object {
 
   /**
@@ -465,6 +468,7 @@ trait EnterSelection extends js.Object {
 /**
  * UpdateSelection is the result fo Selection#data operator
  */
+@native
 trait UpdateSelection extends Selection {
 
   /**

@@ -1,7 +1,9 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 trait Layout extends js.Object {
   def stack(): StackLayout = js.native
   def pie(): PieLayout = js.native
@@ -32,12 +34,14 @@ trait Layout extends js.Object {
   def treemap(): TreeMapLayout = js.native
 }
 
+@native
 trait StackLayout extends js.Object {
   def apply[T](layers: js.Array[T], index: Double = js.native): js.Array[T] = js.native
   def values(accessor: js.Function1[js.Any, Any] = js.native): StackLayout = js.native
   def offset(offset: String): StackLayout = js.native
 }
 
+@native
 trait TreeLayout extends js.Object {
   def sort(): js.Function2[js.Any, js.Any, Double] = js.native
   def sort(comparator: js.Function2[js.Any, js.Any, Double]): TreeLayout = js.native
@@ -51,6 +55,7 @@ trait TreeLayout extends js.Object {
   def size(size: js.Array[Double]): TreeLayout = js.native
 }
 
+@native
 trait PieLayout extends js.Object {
   def apply(values: js.Array[js.Any], index: Double = js.native): js.Array[ArcDescriptor] = js.native
   def value(): js.Function2[js.Any, Double, Double] = js.native
@@ -63,6 +68,7 @@ trait PieLayout extends js.Object {
   def endAngle(angle: Double): PieLayout = js.native
 }
 
+@native
 trait ArcDescriptor extends js.Object {
   var value: js.Any = js.native
   var data: js.Any = js.native
@@ -71,6 +77,7 @@ trait ArcDescriptor extends js.Object {
   var index: Double = js.native
 }
 
+@native
 trait GraphNode extends js.Object {
   var id: Double = js.native
   var index: Double = js.native
@@ -92,11 +99,12 @@ trait GraphNode extends js.Object {
   var depth: Double = js.native
 }
 
+@native
 trait GraphLink extends js.Object {
   var source: GraphNode = js.native
   var target: GraphNode = js.native
 }
-
+@native
 trait ForceLayout extends js.Function {
   def apply(): ForceLayout = js.native
 
@@ -400,10 +408,12 @@ trait ForceLayout extends js.Function {
   def drag(): ForceLayout = js.native
 }
 
+@native
 trait BundleLayout extends js.Object {
   def apply(links: js.Array[GraphLink]): js.Array[js.Array[GraphNode]] = js.native
 }
 
+@native
 trait ChordLayout extends js.Object {
   def matrix(): js.Array[js.Array[Double]] = js.native
   def matrix(matrix: js.Array[js.Array[Double]]): ChordLayout = js.native
@@ -419,6 +429,7 @@ trait ChordLayout extends js.Object {
   def groups(): js.Array[ArcDescriptor] = js.native
 }
 
+@native
 trait ClusterLayout extends js.Object {
   def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
   def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): ClusterLayout = js.native
@@ -434,6 +445,7 @@ trait ClusterLayout extends js.Object {
   def value(value: js.Function1[GraphNode, Double]): ClusterLayout = js.native
 }
 
+@native
 trait HierarchyLayout extends js.Object {
   def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
   def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): HierarchyLayout = js.native
@@ -446,12 +458,14 @@ trait HierarchyLayout extends js.Object {
   def reValue(root: GraphNode): HierarchyLayout = js.native
 }
 
+@native
 trait Bin extends js.Array[js.Any] {
   var x: Double = js.native
   var dx: Double = js.native
   var y: Double = js.native
 }
 
+@native
 trait HistogramLayout extends js.Object {
   def apply(values: js.Array[Double], index: Double = js.native): js.Array[Bin] = js.native
   def value(): js.Function1[js.Any, Any] = js.native
@@ -465,6 +479,7 @@ trait HistogramLayout extends js.Object {
   def frequency(frequency: Boolean): HistogramLayout = js.native
 }
 
+@native
 trait PackLayout extends js.Object {
   def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
   def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): PackLayout = js.native
@@ -480,6 +495,7 @@ trait PackLayout extends js.Object {
   def padding(padding: Double): PackLayout = js.native
 }
 
+@native
 trait PartitionLayout extends js.Object {
   def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
   def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): PackLayout = js.native
@@ -493,6 +509,7 @@ trait PartitionLayout extends js.Object {
   def size(size: js.Array[Double]): PackLayout = js.native
 }
 
+@native
 trait TreeMapLayout extends js.Object {
   def sort(): js.Function2[GraphNode, GraphNode, Double] = js.native
   def sort(comparator: js.Function2[GraphNode, GraphNode, Double]): TreeMapLayout = js.native

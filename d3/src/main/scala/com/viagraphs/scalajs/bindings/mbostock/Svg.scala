@@ -1,7 +1,9 @@
 package com.viagraphs.scalajs.bindings.mbostock
 
 import scala.scalajs.js
+import scala.scalajs.js.native
 
+@native
 trait Svg extends js.Object {
   def symbol(): Symbol = js.native
   def axis(): Axis = js.native
@@ -14,6 +16,7 @@ trait Svg extends js.Object {
   var symbolTypes: js.Array[String] = js.native
 }
 
+@native
 trait AreaObject extends js.Object {
   var x: Double = js.native
   var y0: Double = js.native
@@ -21,6 +24,7 @@ trait AreaObject extends js.Object {
   var y1: Double = js.native
 }
 
+@native
 trait AreaFunc extends js.Object {
   def apply(dat: js.Any): String = js.native
   def x(a: AreaObject => Double): AreaFunc = js.native
@@ -28,11 +32,13 @@ trait AreaFunc extends js.Object {
   def y1(a: AreaObject => Double): AreaFunc = js.native
 }
 
+@native
 trait Symbol extends js.Object {
   var `type`: js.Function1[String, Symbol] = js.native
   var size: js.Function1[Double, Symbol] = js.native
 }
 
+@native
 trait Brush extends js.Object {
   def apply(selection: Selection): Unit = js.native
   def x(): Scale = js.native
@@ -47,6 +53,7 @@ trait Brush extends js.Object {
   def on(`type`: String, listener: js.Function2[js.Any, Double, Any], capture: Boolean = js.native): Brush = js.native
 }
 
+@native
 trait Axis extends js.Object {
   def apply(selection: Selection): Unit = js.native
   def scale(): js.Dynamic = js.native
@@ -64,6 +71,7 @@ trait Axis extends js.Object {
   def tickFormat[A <: js.Any](formatter: js.Function1[A, String]): Axis = js.native
 }
 
+@native
 trait Arc extends js.Object {
   def apply(data: js.Any, index: Double = js.native): String = js.native
   def innerRadius(): js.Function2[js.Any, Double, Double] = js.native
@@ -77,6 +85,7 @@ trait Arc extends js.Object {
   def centroid(data: js.Any, index: Double = js.native): js.Array[Double] = js.native
 }
 
+@native
 trait Line extends js.Object {
   def apply(data: js.Array[js.Any], index: Double = js.native): String = js.native
   def x(): js.Function2[js.Any, Double, Double] = js.native
@@ -93,6 +102,7 @@ trait Line extends js.Object {
   def defined(defined: js.Function1[js.Any, Boolean]): Line = js.native
 }
 
+@native
 trait LineRadial extends js.Object {
   def apply(data: js.Array[js.Any], index: Double = js.native): String = js.native
   def x(): js.Function2[js.Any, Double, Double] = js.native
@@ -113,6 +123,7 @@ trait LineRadial extends js.Object {
   def angle(angle: Double): LineRadial = js.native
 }
 
+@native
 trait Area extends js.Object {
   def apply(data: js.Array[js.Any], index: Double = js.native): String = js.native
   def x(): js.Function2[js.Any, Double, Double] = js.native
@@ -141,6 +152,7 @@ trait Area extends js.Object {
   def defined(defined: js.Function1[js.Any, Any]): Area = js.native
 }
 
+@native
 trait AreaRadial extends js.Object {
   def apply(data: js.Array[js.Any], index: Double = js.native): String = js.native
   def x(): js.Function2[js.Any, Double, Double] = js.native
@@ -181,6 +193,7 @@ trait AreaRadial extends js.Object {
   def endAngle(angle: Double): AreaRadial = js.native
 }
 
+@native
 trait Chord extends js.Object {
   def apply(datum: js.Any, index: Double = js.native): String = js.native
   def radius(): Double = js.native
@@ -195,6 +208,7 @@ trait Chord extends js.Object {
   def target(angle: js.Any): Chord = js.native
 }
 
+@native
 trait Diagonal extends js.Object {
   def apply(datum: js.Any, index: Double = js.native): String = js.native
   def projection(): js.Function2[js.Any, Double, js.Array[Double]] = js.native
