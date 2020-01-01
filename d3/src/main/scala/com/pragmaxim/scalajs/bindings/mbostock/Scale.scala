@@ -1,4 +1,4 @@
-package com.viagraphs.scalajs.bindings.mbostock
+package com.pragmaxim.scalajs.bindings.mbostock
 
 import scala.scalajs.js
 import scala.scalajs.js.{native, Date}
