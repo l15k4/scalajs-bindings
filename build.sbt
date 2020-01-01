@@ -24,7 +24,7 @@ developers += Developer("l15k4", "Jakub Liska", "liska.jakub@gmail.com", url("ht
 scmInfo := Some(ScmInfo(url(s"https://github.com/l15k4/scalajs-bindings"), s"git@github.com:l15k4/scalajs-bindings.git"))
 bintrayVcsUrl := Some(s"git@github.com:l15k4/scalajs-bindings.git")
 bintrayOrganization := Some("pragmaxim")
-bintrayRepository := "scalajs-bindings"
+bintrayRepository := "maven"
 
 pomExtra :=
   <url>https://github.com/l15k4/scalajs-bindings</url>
